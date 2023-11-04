@@ -9,15 +9,15 @@ const ServiceCard = ({ service }) => {
   } = service || {};
   return (
     <div>
-      <div className="relative flex flex-col rounded-xl bg-white bg-clip-border text-secondary shadow-md">
+      <div className="relative flex flex-col rounded-xl bg-white bg-clip-border shadow-md">
         <div className="relative m-0 overflow-hidden text-gray-700 bg-transparent rounded-t-xl shadow-none bg-clip-border">
           <img src={service_img} alt="ui/ux review check" />
         </div>
         <div className="p-6">
-          <h4 className="block font-sans text-2xl antialiased font-semibold leading-snug tracking-normal text-blue-gray-900">
+          <h4 className="block font-sans text-xl antialiased font-semibold leading-snug tracking-normal text-blue-gray-900">
             {service_name}
           </h4>
-          <p className="block mt-3 font-sans text-xl antialiased font-normal leading-relaxed text-gray-700">
+          <p className="block mt-3 font-sans antialiased font-normal leading-relaxed text-gray-700">
             {description}
           </p>
         </div>
