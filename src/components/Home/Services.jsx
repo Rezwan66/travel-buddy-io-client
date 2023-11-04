@@ -3,7 +3,7 @@ import ServiceCard from './ServiceCard';
 
 const Services = ({ services }) => {
   return (
-    <div className="max-w-7xl mx-auto my-16">
+    <div className="max-w-7xl mx-auto my-20">
       {/* <h2 className="text-center text-xl font-semibold text-primary underline mb-8">
         {' '}
         Our Popular Services{' '}

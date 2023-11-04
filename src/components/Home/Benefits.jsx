@@ -1,6 +1,6 @@
 const Benefits = () => {
   return (
-    <div className="max-w-7xl mx-auto my-16">
+    <div className="max-w-7xl mx-auto my-20">
       <section>
         <div className="container">
           <div className="flex flex-wrap -mx-4">
