@@ -1,5 +1,6 @@
 // import Carousel from 'react-elastic-carousel';
 // import Item from './Item';
+import { Link } from 'react-router-dom';
 import { Typewriter } from 'react-simple-typewriter';
 
 const Banner = () => {
@@ -43,15 +44,16 @@ const Banner = () => {
       >
         <div className="hero-overlay bg-opacity-60"></div>
         <div className="container mx-auto max-w-7xl py-20">
-          <div className="flex flex-col lg:flex-row items-center justify-between">
-            <h2 className="text-center text-white text-2xl tracking-normal font-bold">
-              Join us TODAY
-              <br />
+          <div className="flex flex-col lg:flex-row gap-6 items-center justify-between">
+            <div className="text-center text-white text-2xl tracking-normal font-bold">
+              <h2>Join us TODAY</h2>
               {/* <span className="text-blue-800 text-6xl">50% Off</span> */}
-              <button className="btn btn-secondary btn-block mt-4">
-                Sign Up
-              </button>
-            </h2>
+              <Link to="/register">
+                <button className="btn btn-secondary btn-block mt-4">
+                  Sign Up
+                </button>
+              </Link>
+            </div>
             <div className="space-x-2 text-center py-2 lg:py-0">
               <h2 className="md:text-4xl text-white font-medium">
                 Find travel companions for{' '}
@@ -63,7 +65,7 @@ const Banner = () => {
                       'Smiles!',
                       'Experiences!',
                     ]}
-                    loop={5}
+                    loop={0}
                     cursor
                     cursorStyle="_"
                     typeSpeed={70}
