@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom';
 import ServiceCard from '../components/Home/ServiceCard';
 import useAxios from '../hooks/useAxios';
 import { useQuery } from '@tanstack/react-query';
@@ -8,10 +7,13 @@ import { useState } from 'react';
 
 const Services = () => {
   const [searchTerm, setSearchTerm] = useState('');
+  const [showLimit, setShowLimit] = useState(6);
   const axios = useAxios();
 
   const getServices = async () => {
-    const res = await axios.get(`/services?serviceName=${searchTerm}`);
+    const res = await axios.get(
+      `/services?serviceName=${searchTerm}&showLimit=${showLimit}`
+    );
     return res;
   };
   const handleSearch = e => {
@@ -28,7 +30,7 @@ const Services = () => {
     isError,
     error,
   } = useQuery({
-    queryKey: ['services', searchTerm],
+    queryKey: ['services', searchTerm, showLimit],
     queryFn: getServices,
   });
 
@@ -74,7 +76,7 @@ const Services = () => {
             </div>
           </div>
         </div>
-        <div className="flex justify-center mb-8">
+        <div className="flex items-center gap-6 justify-center mb-8">
           <form onSubmit={handleSearch}>
             <div className="form-control">
               <div className="input-group">
@@ -103,6 +105,18 @@ const Services = () => {
               </div>
             </div>
           </form>
+          <div>
+            {searchTerm ? (
+              <button
+                className="text-secondary underline"
+                onClick={() => setSearchTerm('')}
+              >
+                Show All
+              </button>
+            ) : (
+              ''
+            )}
+          </div>
         </div>
         <div className="grid grid-cols-1 gap-6">
           {services?.data?.map(service => (
@@ -113,9 +127,16 @@ const Services = () => {
           ))}
         </div>
         <div className="flex justify-center mt-8">
-          <Link to="/all-services">
-            <button className="btn btn-secondary">Show All</button>
-          </Link>
+          {showLimit ? (
+            <button
+              onClick={() => setShowLimit(0)}
+              className="btn btn-secondary"
+            >
+              Show More
+            </button>
+          ) : (
+            ''
+          )}
         </div>
       </div>
     </div>
