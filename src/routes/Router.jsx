@@ -7,6 +7,8 @@ import Register from '../pages/Register';
 import Dashboard from '../layouts/Dashboard';
 import PrivateRoute from './PrivateRoute';
 import ErrorPage from '../pages/ErrorPage';
+import ServiceDetails from '../pages/ServiceDetails';
+import axios from 'axios';
 
 const Router = createBrowserRouter([
   {
@@ -17,11 +19,21 @@ const Router = createBrowserRouter([
       {
         path: '/',
         element: <Home></Home>,
-        loader: () => fetch('/services.json'),
+        loader: () => fetch('http://localhost:5000/services'),
       },
       {
         path: '/all-services',
         element: <AllServices></AllServices>,
+      },
+      {
+        path: '/services/:id',
+        element: (
+          <PrivateRoute>
+            <ServiceDetails></ServiceDetails>
+          </PrivateRoute>
+        ),
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/services/${params.id}`),
       },
       {
         path: '/login',

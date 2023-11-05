@@ -1,5 +1,8 @@
+import { Link } from 'react-router-dom';
+
 const ServiceCard = ({ service }) => {
   const {
+    _id,
     service_img,
     service_name,
     description,
@@ -43,9 +46,13 @@ const ServiceCard = ({ service }) => {
             </div>
             <h2 className="italic text-secondary text-xs">{provider_name}</h2>
           </div>
-          <button className="btn btn-secondary btn-outline btn-sm capitalize">
-            View Details
-          </button>
+          <div>
+            <Link to={`/services/${_id}`}>
+              <button className="btn btn-secondary btn-outline btn-sm capitalize">
+                View Details
+              </button>
+            </Link>
+          </div>
         </div>
       </div>
     </div>
