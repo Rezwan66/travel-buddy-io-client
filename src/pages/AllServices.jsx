@@ -3,6 +3,8 @@ import ServiceCard from '../components/Home/ServiceCard';
 import useAxios from '../hooks/useAxios';
 import { useQuery } from '@tanstack/react-query';
 import axios from 'axios';
+import Spinner from '../components/Spinner';
+import toast from 'react-hot-toast';
 
 const Services = () => {
   // const axios = useAxios();
@@ -22,6 +24,14 @@ const Services = () => {
   });
 
   console.log(services?.data);
+
+  if (isLoading) {
+    return <Spinner></Spinner>;
+  }
+
+  if (isError) {
+    return toast.error(error.message);
+  }
 
   return (
     <div>
@@ -49,8 +59,8 @@ const Services = () => {
                 All Our Services
               </h2>
               <p className="text-base text-body-color">
-                Take a look at some of our popular ride-sharing shuttle
-                services, and book them directly.
+                Explore our Diverse Range of Services for Your Every Need,
+                Tailored to Enhance Your Daily Life.
               </p>
             </div>
           </div>

@@ -7,7 +7,11 @@ const Footer = () => {
       <div className="container flex flex-col justify-between py-10 mx-auto space-y-8 lg:flex-row lg:space-y-0 max-w-7xl px-6 lg:px-0 border-b border-gray-500">
         <div className="lg:w-1/3">
           <Link to="/">
-            <img className="md:w-52 rounded-xl ml-4 w-72" src={logo} alt="" />
+            <img
+              className="md:w-36 rounded-xl lg:ml-4 w-32"
+              src={logo}
+              alt=""
+            />
           </Link>
         </div>
         <div className="grid grid-cols-2 text-sm gap-x-3 gap-y-8 lg:w-2/3 sm:grid-cols-4">
