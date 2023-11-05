@@ -6,6 +6,7 @@ const ServiceCard = ({ service }) => {
     provider_img,
     provider_name,
     price,
+    area,
   } = service || {};
   return (
     <div>
@@ -19,14 +20,17 @@ const ServiceCard = ({ service }) => {
         </div>
         <div className="p-6">
           <div className="lg:flex lg:items-center lg:justify-between">
-            <h4 className="block font-sans text-xl antialiased font-semibold text-blue-gray-900">
+            <h4 className="block font-sans text-xl antialiased font-bold text-blue-gray-900">
               {service_name}
             </h4>
-            <p className="block font-sans mt-2 lg:mt-0 text-lg italic font-bold text-secondary">
+            <p className="block font-sans mt-3 lg:mt-0 text-lg italic font-bold text-secondary">
               Price: $ {price}
             </p>
           </div>
-          <p className="block mt-3 font-sans antialiased font-normal leading-relaxed text-gray-700">
+          <p className="block italic mt-1 text-sm font-sans antialiased font-normal leading-relaxed text-gray-700">
+            <strong>Location:</strong> {area}
+          </p>
+          <p className="block font-sans mt-3 antialiased font-normal leading-relaxed text-gray-700">
             {description}
           </p>
         </div>
