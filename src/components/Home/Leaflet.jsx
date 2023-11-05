@@ -5,8 +5,8 @@ import '../../../src/index.css';
 const Leaflet = () => {
   const position = [23.8103, 90.4125];
   return (
-    <div className="bg-blue-200 border border-red-600">
-      <div className="hero max-w-7xl mx-auto py-16">
+    <div className="mb-10">
+      <div className="hero max-w-7xl mx-auto py-14 px-6 lg:px-0">
         <div className="hero-content flex-col lg:flex-row-reverse justify-between items-center">
           <div>
             <MapContainer center={position} zoom={13} scrollWheelZoom={false}>
@@ -31,6 +31,10 @@ const Leaflet = () => {
               a sense of our inspiring workspace. We look forward to welcoming
               you here.
             </p>
+            <div className="py-6">
+              <p>Address: Dhanmondi 27, Dhanmondi, Dhaka, Bangladesh.</p>
+              <p>Call us Now: (+880)-178952528</p>
+            </div>
             <div className="flex justify-center lg:justify-start">
               <button className="btn btn-secondary">Call Now</button>
             </div>

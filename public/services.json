@@ -1,7 +1,7 @@
 [
   {
     "service_id": 1,
-    "service_img": "car1.jpg",
+    "service_img": "https://i.imgur.com/ygHlw9c.jpg",
     "service_name": "Daily Commute to Work",
     "description": "Join me for a comfortable daily commute to the city center.",
     "price": 15.0,
@@ -14,7 +14,7 @@
   },
   {
     "service_id": 2,
-    "service_img": "car2.jpg",
+    "service_img": "https://i.imgur.com/y94GS9Q.jpg",
     "service_name": "Airport Shuttle Service",
     "description": "Reliable airport transfers to and from the airport.",
     "price": 25.0,
@@ -27,7 +27,7 @@
   },
   {
     "service_id": 3,
-    "service_img": "car3.jpg",
+    "service_img": "https://i.imgur.com/4Vy4cCd.jpg",
     "service_name": "Weekend Getaways",
     "description": "Explore nearby destinations on the weekends.",
     "price": 30.0,
@@ -40,7 +40,7 @@
   },
   {
     "service_id": 4,
-    "service_img": "car4.jpg",
+    "service_img": "https://i.imgur.com/pbYSvZ2.jpg",
     "service_name": "Student Carpool",
     "description": "Carpool with fellow students to your university.",
     "price": 10.0,

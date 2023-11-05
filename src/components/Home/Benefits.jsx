@@ -2,11 +2,11 @@ const Benefits = () => {
   return (
     <div className="max-w-7xl mx-auto my-20">
       <section>
-        <div className="container">
+        <div className="container px-6 lg:px-0">
           <div className="flex flex-wrap ">
             <div className="w-full px-4">
               <div className="text-center mx-auto mb-12 lg:mb-20 ">
-                <span className="font-semibold text-lg text-primary mb-2 block">
+                <span className="font-semibold text-lg text-secondary mb-2 block">
                   Our Benefits
                 </span>
                 <h2
@@ -48,7 +48,7 @@ const Benefits = () => {
                   flex
                   items-center
                   justify-center
-                  bg-primary
+                  bg-secondary
                   rounded-2xl
                   mb-8
                   "
@@ -94,7 +94,7 @@ const Benefits = () => {
                   flex
                   items-center
                   justify-center
-                  bg-primary
+                  bg-secondary
                   rounded-2xl
                   mb-8
                   "
@@ -141,7 +141,7 @@ const Benefits = () => {
                   flex
                   items-center
                   justify-center
-                  bg-primary
+                  bg-secondary
                   rounded-2xl
                   mb-8
                   "

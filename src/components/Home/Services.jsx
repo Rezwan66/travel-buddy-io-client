@@ -3,15 +3,15 @@ import ServiceCard from './ServiceCard';
 
 const Services = ({ services }) => {
   return (
-    <div className="max-w-7xl mx-auto my-20">
+    <div className="max-w-7xl mx-auto my-20 px-6 lg:px-0">
       {/* <h2 className="text-center text-xl font-semibold text-primary underline mb-8">
         {' '}
         Our Popular Services{' '}
       </h2> */}
-      <div className="flex flex-wrap -mx-4">
+      <div className="flex flex-wrap">
         <div className="w-full px-4">
           <div className="text-center mx-auto mb-10 lg:mb-20 max-w-[510px]">
-            <span className="font-semibold text-lg text-primary mb-2 block">
+            <span className="font-semibold text-lg text-secondary mb-2 block">
               Our Services
             </span>
             <h2
