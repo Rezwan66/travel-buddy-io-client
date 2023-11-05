@@ -2,16 +2,25 @@ import { Link } from 'react-router-dom';
 import ServiceCard from '../components/Home/ServiceCard';
 import useAxios from '../hooks/useAxios';
 import { useQuery } from '@tanstack/react-query';
-import axios from 'axios';
 import Spinner from '../components/Spinner';
 import toast from 'react-hot-toast';
+import { useState } from 'react';
 
 const Services = () => {
-  // const axios = useAxios();
+  const [searchTerm, setSearchTerm] = useState('');
+  const axios = useAxios();
+
   const getServices = async () => {
-    const res = await axios.get('/services.json');
+    const res = await axios.get(`/services?serviceName=${searchTerm}`);
     return res;
   };
+  const handleSearch = e => {
+    e.preventDefault();
+    const searchTerm = e.target.search.value;
+    setSearchTerm(searchTerm);
+  };
+
+  console.log(searchTerm);
 
   const {
     data: services,
@@ -19,7 +28,7 @@ const Services = () => {
     isError,
     error,
   } = useQuery({
-    queryKey: ['services'],
+    queryKey: ['services', searchTerm],
     queryFn: getServices,
   });
 
@@ -35,14 +44,14 @@ const Services = () => {
 
   return (
     <div>
-      <div className="max-w-7xl mx-auto my-20 px-6 lg:px-0">
+      <div className="max-w-2xl mx-auto my-14 px-6 lg:px-0">
         {/* <h2 className="text-center text-xl font-semibold text-primary underline mb-8">
         {' '}
         Our Popular Services{' '}
       </h2> */}
         <div className="flex flex-wrap">
           <div className="w-full px-4">
-            <div className="text-center mx-auto mb-10 lg:mb-20 max-w-[510px]">
+            <div className="text-center mx-auto mb-10 max-w-[510px]">
               <span className="font-semibold text-lg text-secondary mb-2 block">
                 Our Services
               </span>
@@ -65,8 +74,38 @@ const Services = () => {
             </div>
           </div>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {services?.data?.slice(0, 6).map(service => (
+        <div className="flex justify-center mb-8">
+          <form onSubmit={handleSearch}>
+            <div className="form-control">
+              <div className="input-group">
+                <input
+                  type="text"
+                  name="search"
+                  placeholder="Search…"
+                  className="input input-bordered"
+                />
+                <button type="submit" className="btn btn-square">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="h-6 w-6"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
+                      d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+                    />
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+        <div className="grid grid-cols-1 gap-6">
+          {services?.data?.map(service => (
             <ServiceCard
               key={service.service_id}
               service={service}
@@ -74,7 +113,7 @@ const Services = () => {
           ))}
         </div>
         <div className="flex justify-center mt-8">
-          <Link to="/services">
+          <Link to="/all-services">
             <button className="btn btn-secondary">Show All</button>
           </Link>
         </div>

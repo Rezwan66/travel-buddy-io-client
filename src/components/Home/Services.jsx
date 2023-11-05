@@ -39,7 +39,7 @@ const Services = ({ services }) => {
         ))}
       </div>
       <div className="flex justify-center mt-8">
-        <Link to="/services">
+        <Link to="/all-services">
           <button className="btn btn-secondary">Show All</button>
         </Link>
       </div>

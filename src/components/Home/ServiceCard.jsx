@@ -10,7 +10,7 @@ const ServiceCard = ({ service }) => {
   } = service || {};
   return (
     <div>
-      <div className="relative flex flex-col rounded-xl bg-white bg-clip-border shadow-md">
+      <div className="max-h-[600px] relative flex flex-col rounded-xl bg-white bg-clip-border shadow-md">
         <div className="relative m-0 overflow-hidden text-gray-700 bg-transparent rounded-t-xl shadow-none bg-clip-border">
           <img
             className="w-full h-80 object-cover"
