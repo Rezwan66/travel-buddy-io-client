@@ -1,10 +1,14 @@
 import { useContext } from 'react';
 import { useLoaderData } from 'react-router-dom';
 import { AuthContext } from '../providers/AuthProvider';
+import useAxios from '../hooks/useAxios';
+import Swal from 'sweetalert2';
+import toast from 'react-hot-toast';
 
 const ServiceDetails = () => {
   const service = useLoaderData();
   const { user } = useContext(AuthContext);
+  const axios = useAxios();
   //   console.log(Object.keys(service).join(','));
   const {
     _id,
@@ -21,10 +25,52 @@ const ServiceDetails = () => {
     provider_img,
   } = service || {};
 
+  const swalSuccess = () => {
+    return Swal.fire({
+      title: 'Success!',
+      text: 'Booked Successfully',
+      icon: 'success',
+      confirmButtonText: 'Cool',
+    });
+  };
+
   const handleSubmit = e => {
     // e.preventDefault();
-    const email = e.target.email.value;
+    const form = e.target;
+    const email = user?.email;
+    const date = form.date.value;
+    const instructions = form.instructions.value;
+    // service_name
+    // service_img
+    // provider_email
+    // user?.email
+    // date
+    // price
+    // instructions
+
     console.log(email);
+    const booking = {
+      service_id,
+      service_name,
+      service_img,
+      provider_email,
+      user_email: email,
+      date,
+      price,
+      instructions,
+    };
+    console.log(booking);
+
+    axios
+      .post('/bookings', booking)
+      .then(res => {
+        console.log(res.data);
+        if (res?.data?.insertedId) {
+          swalSuccess();
+          form.reset();
+        }
+      })
+      .catch(error => toast.error(error.message));
   };
 
   return (
@@ -32,7 +78,7 @@ const ServiceDetails = () => {
       <div className="card lg:card-side bg-base-100 shadow-xl">
         <figure>
           <img
-            className="h-80 lg:w-72 w-full object-cover"
+            className="lg:h-96 h-80 lg:w-72 w-full object-cover"
             src={service_img}
             alt="Album"
           />
@@ -40,7 +86,9 @@ const ServiceDetails = () => {
         <div className="card-body">
           <div className="flex gap-6">
             <div className="flex-1 space-y-6 border-r pr-2">
-              <h2 className="card-title font-bold">Service:</h2>
+              <h2 className="card-title font-bold md:mb-8 mb-[74px]">
+                Service:
+              </h2>
               <div>
                 <h2 className="font-medium">{service_name}</h2>
                 <p className="text-sm mt-2">
@@ -68,14 +116,14 @@ const ServiceDetails = () => {
             </div>
           </div>
           <div className="mt-8">
-            <button className="btn btn-secondary btn-block">Book Now</button>
+            {/* <button className="btn btn-secondary btn-block">Book Now</button> */}
             {/* modal */}
             {/* You can open the modal using document.getElementById('ID').showModal() method */}
             <button
-              className="btn"
+              className="btn btn-secondary btn-block mt-8"
               onClick={() => document.getElementById('my_modal_4').showModal()}
             >
-              open modal
+              Book Now
             </button>
             <dialog id="my_modal_4" className="modal">
               <div className="modal-box w-11/12 max-w-4xl">

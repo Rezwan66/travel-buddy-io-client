@@ -8,7 +8,6 @@ import Dashboard from '../layouts/Dashboard';
 import PrivateRoute from './PrivateRoute';
 import ErrorPage from '../pages/ErrorPage';
 import ServiceDetails from '../pages/ServiceDetails';
-import axios from 'axios';
 
 const Router = createBrowserRouter([
   {
