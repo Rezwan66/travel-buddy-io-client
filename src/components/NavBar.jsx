@@ -3,6 +3,8 @@ import logo from '../assets/logo/TravelBuddy.io.png';
 import { useContext } from 'react';
 import { AuthContext } from '../providers/AuthProvider';
 import toast from 'react-hot-toast';
+import Lottie from 'lottie-react';
+import noUserAnimation from '../assets/lottie/animation_avatar.json';
 
 const NavBar = () => {
   const { user, logoutUser } = useContext(AuthContext);
@@ -138,9 +140,19 @@ const NavBar = () => {
                 <p>{user?.displayName}</p>
               </div>
             ) : (
-              <Link to="/login" className="btn btn-secondary btn-sm">
-                Login
-              </Link>
+              <div className="flex items-center">
+                <div className="avatar">
+                  <div className="w-14 h-14 rounded-full">
+                    <Lottie
+                      animationData={noUserAnimation}
+                      loop={true}
+                    ></Lottie>
+                  </div>
+                </div>
+                <Link to="/login" className="btn btn-secondary btn-sm">
+                  Login
+                </Link>
+              </div>
             )}
           </div>
         </div>

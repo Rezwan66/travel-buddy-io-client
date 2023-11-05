@@ -5,11 +5,21 @@ import toast from 'react-hot-toast';
 import googleLogo from '../assets/logo/google.png';
 import Lottie from 'lottie-react';
 import loginAnimation from '../assets/lottie/animation_lolfzbit.json';
+import Swal from 'sweetalert2';
 
 const Login = () => {
   const { loginUser, googleLogin } = useContext(AuthContext);
   const location = useLocation();
   const navigate = useNavigate();
+
+  const swalSuccess = () => {
+    return Swal.fire({
+      title: 'Success!',
+      text: 'Logged In Successfully',
+      icon: 'success',
+      confirmButtonText: 'Cool',
+    });
+  };
 
   const handleLogin = e => {
     e.preventDefault();
@@ -21,7 +31,8 @@ const Login = () => {
     loginUser(email, password)
       .then(res => {
         console.log(res.user);
-        toast.success('Signed in successfully!');
+        // toast.success('Signed in successfully!');
+        swalSuccess();
         navigate(location?.state ? location.state : '/');
       })
       .catch(error => toast.error(error.message));
@@ -30,7 +41,8 @@ const Login = () => {
   const handleGoogleLogin = () => {
     googleLogin()
       .then(() => {
-        toast.success('Successfully signed in using Google');
+        // toast.success('Successfully signed in using Google');
+        swalSuccess();
         navigate(location?.state ? location.state : '/');
       })
       .catch(error => toast.error(error.message));
@@ -101,7 +113,7 @@ const Login = () => {
                       Continue with Google
                     </button>
                     <img
-                      className="w-5 top-3 left-3 absolute"
+                      className="w-5 top-3 left-3 md:left-8 absolute"
                       src={googleLogo}
                       alt=""
                     />
