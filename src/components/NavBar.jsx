@@ -1,44 +1,91 @@
 import { Link, NavLink } from 'react-router-dom';
 import logo from '../assets/logo/TravelBuddy.io.png';
+import { useContext } from 'react';
+import { AuthContext } from '../providers/AuthProvider';
+import toast from 'react-hot-toast';
 
 const NavBar = () => {
+  const { user, logoutUser } = useContext(AuthContext);
+  console.log(user);
+
+  const handleLogout = () => {
+    logoutUser()
+      .then(() => {
+        toast.success('Logged out successfully!');
+      })
+      .catch(error => toast.error(error.message));
+  };
+
   const navLinks = (
     <>
       <li>
         <NavLink
           to="/"
           className={({ isActive }) =>
-            isActive
-              ? 'bg-secondary text-white text-base px-4 py-2 rounded-lg'
-              : ''
+            isActive ? 'bg-secondary text-white px-3 py-1 rounded-lg' : ''
           }
         >
-          Home
+          HOME
         </NavLink>
       </li>
       <li>
         <NavLink
-          to="/services"
+          to="/all-services"
           className={({ isActive }) =>
-            isActive
-              ? 'bg-secondary text-white text-base px-4 py-2 rounded-lg'
-              : ''
+            isActive ? 'bg-secondary text-white px-3 py-1 rounded-lg' : ''
           }
         >
-          Services
+          ALL SERVICES
         </NavLink>
       </li>
       <li>
-        <NavLink
-          to="/login"
-          className={({ isActive }) =>
-            isActive
-              ? 'bg-secondary text-white text-base px-4 py-2 rounded-lg'
-              : ''
-          }
-        >
-          Login
-        </NavLink>
+        {user?.email ? (
+          <div className="flex lg:flex-row lg:items-center flex-col items-start lg:gap-8">
+            <details className="dropdown">
+              <summary className="lg:btn lg:btn-outline lg:btn-sm btn-secondary bg-inherit text-inherit">
+                Dashboard
+              </summary>
+              <ul className="p-2 shadow menu menu-sm dropdown-content z-[1] bg-base-100 rounded-box w-52">
+                <li>
+                  <NavLink
+                    to="/dashboard/my-services"
+                    className="bg-transparent"
+                  >
+                    My-services
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink
+                    to="/dashboard/add-services"
+                    className="bg-transparent"
+                  >
+                    Add-services
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink
+                    to="/dashboard/my-schedules"
+                    className="bg-transparent"
+                  >
+                    My-schedules
+                  </NavLink>
+                </li>
+              </ul>
+            </details>
+            <button onClick={handleLogout} className="lg:btn lg:btn-sm">
+              Logout
+            </button>
+          </div>
+        ) : (
+          <NavLink
+            to="/login"
+            className={({ isActive }) =>
+              isActive ? 'bg-secondary text-white px-3 py-1 rounded-lg' : ''
+            }
+          >
+            SIGN IN
+          </NavLink>
+        )}
       </li>
     </>
   );
@@ -75,38 +122,27 @@ const NavBar = () => {
           </Link>
         </div>
         <div className="navbar-center hidden lg:flex">
-          <ul className="flex flex-wrap items-center gap-8 text-sm menu-horizontal px-1">
+          <ul className="flex flex-wrap items-center gap-8 text-sm font-semibold text-secondary menu-horizontal px-1">
             {navLinks}
           </ul>
         </div>
         <div className="navbar-end">
-          <details className="dropdown">
-            <summary className="btn btn-sm">Dashboard</summary>
-            <ul className="p-2 shadow menu menu-sm dropdown-content z-[1] bg-base-100 rounded-box w-52">
-              <li>
-                <NavLink to="/dashboard/my-services" className="bg-transparent">
-                  My-services
-                </NavLink>
-              </li>
-              <li>
-                <NavLink
-                  to="/dashboard/add-services"
-                  className="bg-transparent"
-                >
-                  Add-services
-                </NavLink>
-              </li>
-              <li>
-                <NavLink
-                  to="/dashboard/my-schedules"
-                  className="bg-transparent"
-                >
-                  My-schedules
-                </NavLink>
-              </li>
-            </ul>
-          </details>
-          <a className="btn">Button</a>
+          <div>
+            {user?.email ? (
+              <div className="flex flex-col md:flex-row items-center gap-2 mr-4 lg:mr-0">
+                <div className="avatar">
+                  <div className="w-10 h-10 rounded-full">
+                    <img src={user?.photoURL} />
+                  </div>
+                </div>
+                <p>{user?.displayName}</p>
+              </div>
+            ) : (
+              <Link to="/login" className="btn btn-secondary btn-sm">
+                Login
+              </Link>
+            )}
+          </div>
         </div>
       </div>
     </div>

@@ -1,10 +1,11 @@
 import { createBrowserRouter } from 'react-router-dom';
 import Home from '../pages/Home';
 import MainLayout from '../layouts/MainLayout';
-import Services from '../pages/Services';
+import AllServices from '../pages/AllServices';
 import Login from '../pages/Login';
 import Register from '../pages/Register';
 import Dashboard from '../layouts/Dashboard';
+import PrivateRoute from './PrivateRoute';
 
 const Router = createBrowserRouter([
   {
@@ -18,8 +19,8 @@ const Router = createBrowserRouter([
         loader: () => fetch('/services.json'),
       },
       {
-        path: '/services',
-        element: <Services></Services>,
+        path: '/all-services',
+        element: <AllServices></AllServices>,
       },
       {
         path: '/login',
@@ -33,7 +34,11 @@ const Router = createBrowserRouter([
   },
   {
     path: '/dashboard',
-    element: <Dashboard></Dashboard>,
+    element: (
+      <PrivateRoute>
+        <Dashboard></Dashboard>
+      </PrivateRoute>
+    ),
   },
 ]);
 export default Router;
