@@ -3,9 +3,9 @@ const Benefits = () => {
     <div className="max-w-7xl mx-auto my-20">
       <section>
         <div className="container">
-          <div className="flex flex-wrap -mx-4">
+          <div className="flex flex-wrap ">
             <div className="w-full px-4">
-              <div className="text-center mx-auto mb-12 lg:mb-20 max-w-[510px]">
+              <div className="text-center mx-auto mb-12 lg:mb-20 ">
                 <span className="font-semibold text-lg text-primary mb-2 block">
                   Our Benefits
                 </span>
@@ -28,12 +28,11 @@ const Benefits = () => {
               </div>
             </div>
           </div>
-          <div className="flex flex-wrap -mx-4">
-            <div className="w-full md:w-1/2 lg:w-1/3 px-4">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+            <div className="">
               <div
                 className="
                p-10
-               md:px-7
                xl:px-10
                rounded-[20px]
                bg-white
@@ -76,11 +75,10 @@ const Benefits = () => {
                 </p>
               </div>
             </div>
-            <div className="w-full md:w-1/2 lg:w-1/3 px-4">
+            <div className="">
               <div
                 className="
                p-10
-               md:px-7
                xl:px-10
                rounded-[20px]
                bg-white
@@ -123,11 +121,11 @@ const Benefits = () => {
                 </p>
               </div>
             </div>
-            <div className="w-full md:w-1/2 lg:w-1/3 px-4">
+            <div className="">
               <div
                 className="
                p-10
-               md:px-7
+               
                xl:px-10
                rounded-[20px]
                bg-white

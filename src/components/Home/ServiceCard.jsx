@@ -31,7 +31,7 @@ const ServiceCard = ({ service }) => {
             <h2 className="italic text-primary">{provider_name}</h2>
           </div>
           <button className="btn btn-primary btn-outline">View Details</button>
-          <p className="block font-sans text-xl antialiased font-bold leading-relaxed text-inherit">
+          <p className="block font-sans text-lg antialiased font-bold leading-relaxed text-inherit">
             Price: $ {price}
           </p>
         </div>

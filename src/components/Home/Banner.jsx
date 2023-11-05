@@ -55,7 +55,7 @@ const Banner = () => {
               </Link>
             </div>
             <div className="space-x-2 text-center py-2 lg:py-0">
-              <h2 className="md:text-4xl text-white font-medium">
+              <h2 className="md:text-3xl text-white font-medium">
                 Find travel companions for{' '}
                 <span className="text-primary font-bold">
                   <Typewriter
