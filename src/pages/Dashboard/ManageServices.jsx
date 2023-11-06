@@ -6,6 +6,8 @@ import Spinner from '../../components/Spinner';
 import toast from 'react-hot-toast';
 import ServiceCard from '../../components/ManageServices/ServiceCard';
 import Swal from 'sweetalert2';
+import { Link } from 'react-router-dom';
+import NoDataAnimation from '../../components/NoDataAnimation';
 
 const ManageServices = () => {
   const { user } = useContext(AuthContext);
@@ -30,6 +32,7 @@ const ManageServices = () => {
     isLoading,
     isError,
     error,
+    refetch,
   } = useQuery({
     queryKey: ['services'],
     queryFn: getMyServices,
@@ -84,6 +87,40 @@ const ManageServices = () => {
       .catch(error => toast.error(error.message));
   };
 
+  // handle delete
+  const handleDelete = _id => {
+    console.log(_id);
+    Swal.fire({
+      title: 'Are you sure?',
+      text: "You won't be able to revert this!",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Yes, delete it!',
+    }).then(result => {
+      if (result.isConfirmed) {
+        axios
+          .delete(`/services/${_id}`)
+          .then(res => {
+            console.log(res.data);
+            if (res.data.deletedCount > 0) {
+              Swal.fire({
+                title: 'Deleted!',
+                text: 'Your service has been deleted.',
+                icon: 'success',
+              });
+              refetch();
+            }
+          })
+          .catch(error => {
+            console.log(error);
+            toast.error(error.message);
+          });
+      }
+    });
+  };
+
   return (
     <div className="max-w-2xl mx-auto mt-8 mb-14 px-6 lg:px-0">
       {/* title */}
@@ -111,15 +148,31 @@ const ManageServices = () => {
           </div>
         </div>
       </div>
-      <div>
-        {services?.data?.map(service => (
-          <ServiceCard
-            key={service._id}
-            service={service}
-            user={user}
-            handleEdit={handleEdit}
-          ></ServiceCard>
-        ))}
+      <div className="my-10">
+        {services?.data.length ? (
+          <div className="flex flex-col gap-6">
+            {services?.data?.map(service => (
+              <ServiceCard
+                key={service._id}
+                service={service}
+                user={user}
+                handleEdit={handleEdit}
+                handleDelete={handleDelete}
+              ></ServiceCard>
+            ))}
+          </div>
+        ) : (
+          <div className="flex flex-col justify-center gap-6">
+            <NoDataAnimation></NoDataAnimation>
+            <div className="flex justify-center">
+              <Link to="/add-services">
+                <button className="btn btn-secondary text-white">
+                  Add Services
+                </button>
+              </Link>
+            </div>
+          </div>
+        )}
       </div>
     </div>
   );

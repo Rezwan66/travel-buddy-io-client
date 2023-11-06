@@ -1,4 +1,6 @@
-const ServiceCard = ({ service, user, handleEdit }) => {
+import { FaEdit } from 'react-icons/fa';
+
+const ServiceCard = ({ service, user, handleEdit, handleDelete }) => {
   const {
     _id,
     service_id,
@@ -51,7 +53,7 @@ const ServiceCard = ({ service, user, handleEdit }) => {
                   document.getElementById('my_modal_4').showModal()
                 }
               >
-                Edit
+                <FaEdit></FaEdit>
               </button>
               <dialog id="my_modal_4" className="modal">
                 <div className="modal-box w-11/12 max-w-4xl">
@@ -161,7 +163,10 @@ const ServiceCard = ({ service, user, handleEdit }) => {
               </dialog>
             </div>
             <div>
-              <button className="btn btn-error btn-circle btn-outline btn-sm">
+              <button
+                onClick={() => handleDelete(_id)}
+                className="btn btn-error btn-circle btn-outline btn-sm"
+              >
                 X
               </button>
             </div>

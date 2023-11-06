@@ -4,7 +4,6 @@ import MainLayout from '../layouts/MainLayout';
 import AllServices from '../pages/AllServices';
 import Login from '../pages/Login';
 import Register from '../pages/Register';
-import Dashboard from '../layouts/Dashboard';
 import PrivateRoute from './PrivateRoute';
 import ErrorPage from '../pages/ErrorPage';
 import ServiceDetails from '../pages/ServiceDetails';
@@ -45,19 +44,8 @@ const Router = createBrowserRouter([
         path: '/register',
         element: <Register></Register>,
       },
-    ],
-  },
-  {
-    path: '/dashboard',
-    element: (
-      <PrivateRoute>
-        <Dashboard></Dashboard>
-      </PrivateRoute>
-    ),
-    errorElement: <ErrorPage></ErrorPage>,
-    children: [
       {
-        path: '/dashboard/add-services',
+        path: '/add-services',
         element: (
           <PrivateRoute>
             <AddServices></AddServices>
@@ -65,7 +53,7 @@ const Router = createBrowserRouter([
         ),
       },
       {
-        path: '/dashboard/manage-services',
+        path: '/manage-services',
         element: (
           <PrivateRoute>
             <ManageServices></ManageServices>
@@ -73,7 +61,7 @@ const Router = createBrowserRouter([
         ),
       },
       {
-        path: '/dashboard/my-schedules',
+        path: '/my-schedules',
         element: (
           <PrivateRoute>
             <MySchedules></MySchedules>
