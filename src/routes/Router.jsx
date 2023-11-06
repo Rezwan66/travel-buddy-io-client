@@ -58,15 +58,27 @@ const Router = createBrowserRouter([
     children: [
       {
         path: '/dashboard/add-services',
-        element: <AddServices></AddServices>,
+        element: (
+          <PrivateRoute>
+            <AddServices></AddServices>
+          </PrivateRoute>
+        ),
       },
       {
         path: '/dashboard/manage-services',
-        element: <ManageServices></ManageServices>,
+        element: (
+          <PrivateRoute>
+            <ManageServices></ManageServices>
+          </PrivateRoute>
+        ),
       },
       {
         path: '/dashboard/my-schedules',
-        element: <MySchedules></MySchedules>,
+        element: (
+          <PrivateRoute>
+            <MySchedules></MySchedules>
+          </PrivateRoute>
+        ),
       },
     ],
   },

@@ -35,7 +35,7 @@ const Services = ({ services }) => {
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {services?.slice(0, 4).map(service => (
-          <ServiceCard key={service.service_id} service={service}></ServiceCard>
+          <ServiceCard key={service._id} service={service}></ServiceCard>
         ))}
       </div>
       <div className="flex justify-center mt-8">

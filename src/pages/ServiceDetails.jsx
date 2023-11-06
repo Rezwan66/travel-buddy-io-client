@@ -73,7 +73,29 @@ const ServiceDetails = () => {
   };
 
   return (
-    <div className="my-20 max-w-5xl mx-auto px-6 lg:px-0">
+    <div className="mt-6 mb-14 max-w-5xl mx-auto px-6 lg:px-0">
+      <div className="flex flex-wrap mb-4">
+        <div className="w-full px-4">
+          <div className="text-center mx-auto mb-10 max-w-[510px]">
+            <span className="font-semibold text-lg text-secondary mb-2 block">
+              Service
+            </span>
+            <h2
+              className="
+                  font-bold
+                  text-3xl
+                  sm:text-4xl
+                  md:text-[40px]
+                  text-dark
+                  mb-4
+                  "
+            >
+              Service Details
+            </h2>
+            <p className="text-base text-body-color">Book a service here.</p>
+          </div>
+        </div>
+      </div>
       <div className="card lg:card-side bg-base-100 shadow-xl">
         <figure>
           <img
