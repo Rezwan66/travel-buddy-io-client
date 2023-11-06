@@ -10,7 +10,7 @@ const MainLayout = () => {
     //     backgroundImage: 'url(/liquid-cheese.png)',
     //   }}
     // ></div>
-    <div>
+    <div className="bg-blue-50">
       <NavBar></NavBar>
       <Outlet></Outlet>
       <Footer></Footer>

@@ -18,15 +18,6 @@ const ManageServices = () => {
     return res;
   };
 
-  const swalSuccess = () => {
-    return Swal.fire({
-      title: 'Success!',
-      text: 'Successfully updated the Service.',
-      icon: 'success',
-      confirmButtonText: 'Cool',
-    });
-  };
-
   const {
     data: services,
     isLoading,
@@ -52,39 +43,49 @@ const ManageServices = () => {
   const handleEdit = e => {
     // e.preventDefault();
     const form = e.target;
-    const email = user?.email;
-    const date = form.date.value;
-    const instructions = form.instructions.value;
-    // service_name
-    // service_img
-    // provider_email
-    // user?.email
-    // date
-    // price
-    // instructions
-
-    console.log(email);
-    const booking = {
-      service_name,
-      service_img,
-      provider_email,
-      user_email: email,
-      date,
-      price,
-      instructions,
+    const id = form._id.value;
+    const price = parseInt(form.price.value);
+    const service = {
+      service_img: form.service_img.value || '',
+      service_name: form.service_name.value,
+      provider_name: form.provider_name.value,
+      provider_email: form.email.value,
+      provider_img: form.provider_img.value || user?.photoURL,
+      price: price,
+      provider_location: form.provider_location.value || 'not-given',
+      description: form.description.value || 'not-given',
+      provider_description: form.provider_description.value || 'not-given',
     };
-    console.log(booking);
 
-    axios
-      .post('/bookings', booking)
-      .then(res => {
-        console.log(res.data);
-        if (res?.data?.insertedId) {
-          swalSuccess();
-          form.reset();
-        }
-      })
-      .catch(error => toast.error(error.message));
+    console.log(id, price, service);
+
+    Swal.fire({
+      title: 'Are you sure?',
+      text: 'Do you really want to edit this service?',
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Yes, edit!',
+    }).then(result => {
+      if (result.isConfirmed) {
+        axios
+          .put(`/services/${id}`, service)
+          .then(res => {
+            console.log(res.data);
+            if (res.data.modifiedCount > 0) {
+              Swal.fire({
+                title: 'Updated!',
+                text: 'Your service has been updated.',
+                icon: 'success',
+              });
+              form.reset();
+              refetch();
+            }
+          })
+          .catch(err => toast.error(err.message));
+      }
+    });
   };
 
   // handle delete
@@ -122,13 +123,13 @@ const ManageServices = () => {
   };
 
   return (
-    <div className="max-w-2xl mx-auto mt-8 mb-14 px-6 lg:px-0">
+    <div className="max-w-2xl mx-auto mt-8 mb-20 px-6 lg:px-0">
       {/* title */}
       <div className="flex flex-wrap">
         <div className="w-full px-4">
           <div className="text-center mx-auto mb-10 max-w-[510px]">
             <span className="font-semibold text-lg text-secondary mb-2 block">
-              Your Services
+              My Services
             </span>
             <h2
               className="

@@ -36,11 +36,11 @@ const AddServices = () => {
     // provider_description,
 
     const service = {
-      service_img: form.service_img.value || 'not-given',
+      service_img: form.service_img.value || '',
       service_name: form.service_name.value,
       provider_name: user?.displayName,
       provider_email: email,
-      provider_img: user?.photoURL || 'not-given',
+      provider_img: user?.photoURL || '',
       price: price,
       provider_location: form.provider_location.value || 'not-given',
       description: form.description.value || 'not-given',

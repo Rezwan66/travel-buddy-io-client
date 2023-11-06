@@ -12,8 +12,6 @@ const ServiceDetails = () => {
   const navigate = useNavigate();
   //   console.log(Object.keys(service).join(','));
   const {
-    _id,
-    service_id,
     service_img,
     service_name,
     description,
@@ -67,6 +65,7 @@ const ServiceDetails = () => {
         if (res?.data?.insertedId) {
           swalSuccess();
           form.reset();
+          navigate('/my-schedules');
         }
       })
       .catch(error => toast.error(error.message));
