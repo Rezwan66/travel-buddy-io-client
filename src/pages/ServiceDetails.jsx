@@ -1,5 +1,5 @@
 import { useContext } from 'react';
-import { useLoaderData } from 'react-router-dom';
+import { useLoaderData, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../providers/AuthProvider';
 import useAxios from '../hooks/useAxios';
 import Swal from 'sweetalert2';
@@ -9,6 +9,7 @@ const ServiceDetails = () => {
   const service = useLoaderData();
   const { user } = useContext(AuthContext);
   const axios = useAxios();
+  const navigate = useNavigate();
   //   console.log(Object.keys(service).join(','));
   const {
     _id,
@@ -17,7 +18,6 @@ const ServiceDetails = () => {
     service_name,
     description,
     price,
-    area,
     provider_name,
     provider_location,
     provider_description,
@@ -28,7 +28,7 @@ const ServiceDetails = () => {
   const swalSuccess = () => {
     return Swal.fire({
       title: 'Success!',
-      text: 'Booked Successfully',
+      text: 'Thanks for Booking with Us.',
       icon: 'success',
       confirmButtonText: 'Cool',
     });
@@ -50,7 +50,6 @@ const ServiceDetails = () => {
 
     console.log(email);
     const booking = {
-      service_id,
       service_name,
       service_img,
       provider_email,
@@ -74,7 +73,7 @@ const ServiceDetails = () => {
   };
 
   return (
-    <div className="my-14 max-w-5xl mx-auto px-6 lg:px-0">
+    <div className="my-20 max-w-5xl mx-auto px-6 lg:px-0">
       <div className="card lg:card-side bg-base-100 shadow-xl">
         <figure>
           <img

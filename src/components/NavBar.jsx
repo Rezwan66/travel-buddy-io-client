@@ -50,18 +50,18 @@ const NavBar = () => {
               <ul className="p-2 shadow menu menu-sm dropdown-content z-[1] bg-base-100 rounded-box w-52">
                 <li>
                   <NavLink
-                    to="/dashboard/my-services"
+                    to="/dashboard/add-services"
                     className="bg-transparent"
                   >
-                    My-services
+                    Add Services
                   </NavLink>
                 </li>
                 <li>
                   <NavLink
-                    to="/dashboard/add-services"
+                    to="/dashboard/manage-services"
                     className="bg-transparent"
                   >
-                    Add-services
+                    Manage Services
                   </NavLink>
                 </li>
                 <li>
@@ -69,7 +69,7 @@ const NavBar = () => {
                     to="/dashboard/my-schedules"
                     className="bg-transparent"
                   >
-                    My-schedules
+                    My Schedules
                   </NavLink>
                 </li>
               </ul>

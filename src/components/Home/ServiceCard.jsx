@@ -8,8 +8,8 @@ const ServiceCard = ({ service }) => {
     description,
     provider_img,
     provider_name,
+    provider_location,
     price,
-    area,
   } = service || {};
   return (
     <div>
@@ -31,7 +31,7 @@ const ServiceCard = ({ service }) => {
             </p>
           </div>
           <p className="block italic mt-1 text-sm font-sans antialiased font-normal leading-relaxed text-gray-700">
-            <strong>Location:</strong> {area}
+            <strong>Location:</strong> {provider_location}
           </p>
           <p className="block font-sans mt-3 antialiased font-normal leading-relaxed text-gray-700">
             {description}
