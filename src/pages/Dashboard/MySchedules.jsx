@@ -11,6 +11,7 @@ import TableRowPending from '../../components/MySchedules/TableRowPending';
 
 const MySchedules = () => {
   const [myBookings, setMyBookings] = useState([]);
+  // const [bookingStatus, setBookingStatus] = useState('');
   const { user } = useContext(AuthContext);
   const axios = useAxios();
 
@@ -55,8 +56,8 @@ const MySchedules = () => {
 
   return (
     <div className="max-w-7xl mx-auto px-6 lg:px-0 my-14">
-      <div className="flex lg:flex-row flex-col rounded-lg ">
-        <div className="flex-1 bg-sky-200">
+      <div className="flex lg:flex-row flex-col rounded-lg gap-6">
+        <div className="flex-1 bg-sky-100 shadow-xl rounded-xl py-6">
           {/* title */}
           <div className="flex flex-wrap">
             <div className="w-full px-4">
@@ -93,7 +94,7 @@ const MySchedules = () => {
                       <th>Service</th>
                       <th>Provider Email</th>
                       <th>Date</th>
-                      <th>Status</th>
+                      <th>Price</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -121,7 +122,7 @@ const MySchedules = () => {
             </div>
           </div>
         </div>
-        <div className="flex-1 bg-blue-300">
+        <div className="flex-1 bg-blue-100 shadow-xl rounded-xl py-6">
           {/* title */}
           <div className="flex flex-wrap">
             <div className="w-full px-4">
@@ -167,6 +168,7 @@ const MySchedules = () => {
                       <TableRowPending
                         key={booking._id}
                         booking={booking}
+                        refetch={refetch}
                       ></TableRowPending>
                     ))}
                   </tbody>

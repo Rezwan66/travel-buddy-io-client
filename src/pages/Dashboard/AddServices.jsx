@@ -63,9 +63,11 @@ const AddServices = () => {
 
   return (
     <div className="max-w-4xl mx-auto mt-10 mb-14 px-6 lg:px-0">
-      <div className="card w-full p-8 shadow-2xl bg-base-100">
+      <div className="card w-full p-8 shadow-2xl bg-blue-100">
         <div className="text-center">
-          <h1 className="text-4xl font-bold">Add Your Service</h1>
+          <h1 className="text-4xl font-bold text-secondary">
+            Add Your Service
+          </h1>
           <p className="pt-2 pb-6 italic text-sm">
             Share Your Expertise, Offer Your Services
           </p>

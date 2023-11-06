@@ -1,14 +1,6 @@
 const TableRowBookings = ({ booking }) => {
-  const {
-    _id,
-    service_name,
-    service_img,
-    provider_email,
-    user_email,
-    date,
-    price,
-    instructions,
-  } = booking || {};
+  const { service_name, service_img, provider_email, date, price } =
+    booking || {};
   //   console.log(Object.keys(booking).join(','));
   return (
     <tr>
@@ -27,7 +19,7 @@ const TableRowBookings = ({ booking }) => {
       <td>{provider_email}</td>
       <td>{date}</td>
       <td>
-        <button className="btn btn-ghost btn-xs">details</button>
+        <button className="btn btn-ghost btn-xs">$ {price}</button>
       </td>
     </tr>
   );

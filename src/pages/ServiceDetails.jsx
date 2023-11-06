@@ -58,6 +58,15 @@ const ServiceDetails = () => {
     };
     console.log(booking);
 
+    if (booking?.user_email === booking?.provider_email) {
+      return Swal.fire({
+        title: 'Oops!',
+        text: 'You cannot book your own service!',
+        icon: 'error',
+        confirmButtonText: 'Cool',
+      });
+    }
+
     axios
       .post('/bookings', booking)
       .then(res => {

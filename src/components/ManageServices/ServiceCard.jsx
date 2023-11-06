@@ -68,14 +68,14 @@ const ServiceCard = ({ service, handleEdit, handleDelete }) => {
                 <FaEdit></FaEdit>
               </button>
               <dialog id="my_modal_4" className="modal">
-                <div className="modal-box w-11/12 max-w-4xl">
-                  <h3 className="font-bold text-lg text-center mb-4">
+                <div className="modal-box w-11/12 max-w-4xl bg-blue-50">
+                  <h3 className="font-bold text-lg text-center text-secondary mb-2">
                     Edit Service!
                   </h3>
                   <div className="">
                     <form onSubmit={handleEdit} method="dialog">
                       {/* if there is a button, it will close the modal */}
-                      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
                         {/* _id */}
                         <div className="form-control hidden">
                           <label className="label">
