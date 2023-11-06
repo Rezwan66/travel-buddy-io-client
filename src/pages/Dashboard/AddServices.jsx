@@ -62,7 +62,7 @@ const AddServices = () => {
   };
 
   return (
-    <div className="max-w-4xl mx-auto mt-10 mb-14">
+    <div className="max-w-4xl mx-auto mt-10 mb-14 px-6 lg:px-0">
       <div className="card w-full p-8 shadow-2xl bg-base-100">
         <div className="text-center">
           <h1 className="text-4xl font-bold">Add Your Service</h1>
@@ -138,7 +138,7 @@ const AddServices = () => {
                 className="input input-bordered"
               />
             </div>
-            <div className="form-control col-span-2">
+            <div className="form-control md:col-span-2">
               <label className="label">
                 <span className="label-text">Short Description</span>
               </label>
@@ -148,7 +148,7 @@ const AddServices = () => {
                 className="input input-bordered"
               />
             </div>
-            <div className="form-control col-span-2">
+            <div className="form-control md:col-span-2">
               <label className="label">
                 <span className="label-text">About Yourself</span>
               </label>

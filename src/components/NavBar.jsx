@@ -65,6 +65,29 @@ const NavBar = () => {
                 </li>
               </ul>
             </details>
+            {/* another dropdown */}
+            {/* <div className="dropdown">
+              <label tabIndex={0} className="lg:btn lg:btn-outline lg:btn-sm btn-secondary bg-inherit text-inherit">
+                Dashboard
+              </label>
+              <ul tabIndex={0} className="p-2 shadow menu menu-sm dropdown-content z-[1] bg-base-100 rounded-box w-52">
+                <li>
+                  <NavLink to="/add-services" className="bg-transparent">
+                    Add Services
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink to="/manage-services" className="bg-transparent">
+                    Manage Services
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink to="/my-schedules" className="bg-transparent">
+                    My Schedules
+                  </NavLink>
+                </li>
+              </ul>
+            </div> */}
             <button onClick={handleLogout} className="lg:btn lg:btn-sm">
               Logout
             </button>
