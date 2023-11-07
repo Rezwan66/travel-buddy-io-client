@@ -43,7 +43,7 @@ const NavBar = () => {
       <li>
         {user?.email ? (
           <div className="flex lg:flex-row lg:items-center flex-col items-start lg:gap-8">
-            <details className="dropdown focus">
+            <details className="dropdown">
               <summary className="lg:btn lg:btn-outline lg:btn-sm btn-secondary bg-inherit text-inherit">
                 Dashboard
               </summary>
@@ -67,10 +67,16 @@ const NavBar = () => {
             </details>
             {/* another dropdown */}
             {/* <div className="dropdown">
-              <label tabIndex={0} className="lg:btn lg:btn-outline lg:btn-sm btn-secondary bg-inherit text-inherit">
+              <label
+                tabIndex={0}
+                className="lg:btn lg:btn-outline lg:btn-sm btn-secondary bg-inherit text-inherit"
+              >
                 Dashboard
               </label>
-              <ul tabIndex={0} className="p-2 shadow menu menu-sm dropdown-content z-[1] bg-base-100 rounded-box w-52">
+              <ul
+                tabIndex={0}
+                className="p-2 shadow menu menu-sm dropdown-content z-[1] bg-base-100 rounded-box w-52"
+              >
                 <li>
                   <NavLink to="/add-services" className="bg-transparent">
                     Add Services
@@ -88,8 +94,8 @@ const NavBar = () => {
                 </li>
               </ul>
             </div> */}
-            <button onClick={handleLogout} className="lg:btn lg:btn-sm">
-              Logout
+            <button onClick={handleLogout} className="capitalize">
+              LOGOUT
             </button>
           </div>
         ) : (
@@ -107,7 +113,7 @@ const NavBar = () => {
   );
   return (
     <div className="bg-transparent">
-      <div className="navbar max-w-7xl mx-auto py-3">
+      <div className="navbar max-w-7xl mx-auto py-4">
         <div className="navbar-start">
           <div className="dropdown">
             <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -138,7 +144,7 @@ const NavBar = () => {
           </Link>
         </div>
         <div className="navbar-center hidden lg:flex">
-          <ul className="flex flex-wrap items-center gap-8 text-sm font-semibold text-secondary menu-horizontal px-1">
+          <ul className="flex flex-wrap items-center gap-7 text-sm font-semibold text-secondary menu-horizontal px-1">
             {navLinks}
           </ul>
         </div>
@@ -147,7 +153,7 @@ const NavBar = () => {
             {user?.email ? (
               <div className="flex flex-col md:flex-row items-center gap-2 mr-4 lg:mr-0">
                 <div className="avatar">
-                  <div className="w-10 h-10 rounded-full">
+                  <div className="w-8 h-8 lg:w-10 lg:h-10 rounded-full">
                     <img src={user?.photoURL} />
                   </div>
                 </div>

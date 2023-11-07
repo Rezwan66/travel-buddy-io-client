@@ -39,6 +39,7 @@ const ServiceCard = ({ service, handleEdit, handleDelete }) => {
         <div className="card-body flex-row justify-between">
           <div className="space-y-4">
             <h2 className="card-title font-bold">{service_name}</h2>
+            {/* <h2 className="font-medium">{description}</h2> */}
             <div className="flex items-center gap-3">
               <div className="avatar">
                 <div className="w-4 h-4 rounded-full ring ring-secondary ring-offset-base-100 ring-offset-2">

@@ -16,7 +16,7 @@ const ServiceCard = ({ service }) => {
       <div className="max-h-[600px] relative flex flex-col rounded-xl bg-white bg-clip-border shadow-md">
         <div className="relative m-0 overflow-hidden text-gray-700 bg-transparent rounded-t-xl shadow-none bg-clip-border">
           <img
-            className="w-full h-80 object-cover"
+            className="w-full h-60 object-cover"
             src={service_img}
             alt="ui/ux review check"
           />
@@ -37,7 +37,7 @@ const ServiceCard = ({ service }) => {
             {description}
           </p>
         </div>
-        <div className="flex items-center justify-between p-6">
+        <div className="flex items-center justify-between p-6 pt-0">
           <div className="flex items-center gap-4">
             <div className="avatar">
               <div className="w-8 rounded-full ring ring-secondary ring-offset-base-100 ring-offset-2">
