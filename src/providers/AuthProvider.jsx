@@ -48,7 +48,7 @@ const AuthProvider = ({ children }) => {
     });
 
     return () => unSubscribe();
-  }, []);
+  }, [user?.email]);
   //   console.log(user);
 
   // create user with email & password
