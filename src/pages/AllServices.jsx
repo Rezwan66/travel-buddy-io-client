@@ -4,6 +4,7 @@ import { useQuery } from '@tanstack/react-query';
 import Spinner from '../components/Spinner';
 import toast from 'react-hot-toast';
 import { useState } from 'react';
+import { Helmet } from 'react-helmet-async';
 
 const Services = () => {
   const [searchTerm, setSearchTerm] = useState('');
@@ -46,6 +47,9 @@ const Services = () => {
 
   return (
     <div>
+      <Helmet>
+        <title>TravelBuddy | All Services</title>
+      </Helmet>
       <div className="max-w-2xl mx-auto my-14 px-6 lg:px-0">
         {/* <h2 className="text-center text-xl font-semibold text-primary underline mb-8">
         {' '}

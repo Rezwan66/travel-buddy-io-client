@@ -8,6 +8,7 @@ import NoDataAnimation from '../../components/NoDataAnimation';
 import TableRowBookings from '../../components/MySchedules/TableRowBookings';
 import { Link } from 'react-router-dom';
 import TableRowPending from '../../components/MySchedules/TableRowPending';
+import { Helmet } from 'react-helmet-async';
 
 const MySchedules = () => {
   const [myBookings, setMyBookings] = useState([]);
@@ -56,6 +57,9 @@ const MySchedules = () => {
 
   return (
     <div className="max-w-7xl mx-auto px-6 lg:px-0 my-14">
+      <Helmet>
+        <title>TravelBuddy | Schedules</title>
+      </Helmet>
       <div className="flex lg:flex-row flex-col rounded-lg gap-6">
         <div className="flex-1 bg-sky-100 shadow-xl rounded-xl py-6">
           {/* title */}

@@ -6,6 +6,7 @@ import googleLogo from '../assets/logo/google.png';
 import registerAnimation from '../assets/lottie/animation_reg.json';
 import Lottie from 'lottie-react';
 import Swal from 'sweetalert2';
+import { Helmet } from 'react-helmet-async';
 
 const Register = () => {
   const { createUser, updateUser, googleLogin } = useContext(AuthContext);
@@ -61,6 +62,9 @@ const Register = () => {
 
   return (
     <div>
+      <Helmet>
+        <title>TravelBuddy | Register</title>
+      </Helmet>
       <div className="mt-4 mb-16 max-w-7xl mx-auto">
         <div className="hero">
           <div className="hero-content lg:gap-52 flex-col lg:flex-row">

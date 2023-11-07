@@ -3,10 +3,14 @@ import errorAnimation from '../assets/lottie/animation_error.json';
 import NavBar from '../components/NavBar';
 import Footer from '../components/Footer';
 import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 
 const ErrorPage = () => {
   return (
     <div>
+      <Helmet>
+        <title>ERROR!</title>
+      </Helmet>
       <NavBar></NavBar>
       {/* error animation */}
       <div className="my-14 flex lg:flex-row flex-col-reverse items-center justify-center gap-14 max-w-7xl mx-auto">

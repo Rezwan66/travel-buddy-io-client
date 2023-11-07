@@ -9,6 +9,7 @@ import { useQuery } from '@tanstack/react-query';
 import Spinner from '../components/Spinner';
 import Lottie from 'lottie-react';
 import noProductAnimation from '../assets/lottie/Animation - noProd.json';
+import { Helmet } from 'react-helmet-async';
 
 const ServiceDetails = () => {
   const service = useLoaderData();
@@ -112,6 +113,9 @@ const ServiceDetails = () => {
 
   return (
     <div className="mt-6 mb-14 max-w-4xl mx-auto px-6 lg:px-0">
+      <Helmet>
+        <title>Service | {service_name}</title>
+      </Helmet>
       {/* title */}
       <div className="flex flex-wrap mb-4">
         <div className="w-full px-4">

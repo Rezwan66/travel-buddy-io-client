@@ -6,6 +6,7 @@ import googleLogo from '../assets/logo/google.png';
 import Lottie from 'lottie-react';
 import loginAnimation from '../assets/lottie/animation_lolfzbit.json';
 import Swal from 'sweetalert2';
+import { Helmet } from 'react-helmet-async';
 
 const Login = () => {
   const { loginUser, googleLogin } = useContext(AuthContext);
@@ -50,6 +51,9 @@ const Login = () => {
 
   return (
     <div>
+      <Helmet>
+        <title>TravelBuddy | Login</title>
+      </Helmet>
       <div className="mt-4 mb-16 max-w-7xl mx-auto">
         <div className="hero">
           <div className="hero-content lg:gap-52 flex-col lg:flex-row">

@@ -8,6 +8,7 @@ import ServiceCard from '../../components/ManageServices/ServiceCard';
 import Swal from 'sweetalert2';
 import { Link } from 'react-router-dom';
 import NoDataAnimation from '../../components/NoDataAnimation';
+import { Helmet } from 'react-helmet-async';
 
 const ManageServices = () => {
   const { user } = useContext(AuthContext);
@@ -124,6 +125,9 @@ const ManageServices = () => {
 
   return (
     <div className="max-w-2xl mx-auto mt-8 mb-20 px-6 lg:px-0">
+      <Helmet>
+        <title>TravelBuddy | Manage Services</title>
+      </Helmet>
       {/* title */}
       <div className="flex flex-wrap">
         <div className="w-full px-4">

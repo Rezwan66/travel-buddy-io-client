@@ -4,6 +4,7 @@ import useAxios from '../../hooks/useAxios';
 import { useNavigate } from 'react-router-dom';
 import toast from 'react-hot-toast';
 import Swal from 'sweetalert2';
+import { Helmet } from 'react-helmet-async';
 
 const AddServices = () => {
   const { user } = useContext(AuthContext);
@@ -63,6 +64,9 @@ const AddServices = () => {
 
   return (
     <div className="max-w-4xl mx-auto mt-10 mb-14 px-6 lg:px-0">
+      <Helmet>
+        <title>TravelBuddy | Add Service</title>
+      </Helmet>
       <div className="card w-full p-8 shadow-2xl bg-blue-100">
         <div className="text-center">
           <h1 className="text-4xl font-bold text-secondary">
