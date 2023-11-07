@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
 
 const ServiceCard = ({ service }) => {
   const {
@@ -12,7 +13,15 @@ const ServiceCard = ({ service }) => {
     price,
   } = service || {};
   return (
-    <div>
+    <motion.div
+      initial={{ scale: 0 }}
+      animate={{ scale: 1 }}
+      transition={{
+        type: 'spring',
+        stiffness: 300,
+        damping: 25,
+      }}
+    >
       <div className="max-h-[600px] relative flex flex-col rounded-xl bg-white bg-clip-border shadow-md">
         <div className="relative m-0 overflow-hidden text-gray-700 bg-transparent rounded-t-xl shadow-none bg-clip-border">
           <img
@@ -46,16 +55,24 @@ const ServiceCard = ({ service }) => {
             </div>
             <h2 className="italic text-secondary text-xs">{provider_name}</h2>
           </div>
-          <div>
+          <motion.div
+            animate={{ scale: 1 }}
+            whileHover={{ scale: 1.1, rotate: -5 }}
+            transition={{
+              type: 'spring',
+              stiffness: 200,
+              damping: 20,
+            }}
+          >
             <Link to={`/services/${_id}`}>
               <button className="btn btn-secondary btn-outline btn-sm capitalize">
                 View Details
               </button>
             </Link>
-          </div>
+          </motion.div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 export default ServiceCard;
