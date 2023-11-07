@@ -19,7 +19,7 @@ const TableRowBookings = ({ booking }) => {
       <td>{provider_email}</td>
       <td>{date ? date : <span className="italic text-xs">not-given</span>}</td>
       <td>
-        <button className="btn btn-ghost btn-xs">$ {price}</button>
+        <button className="btn btn-ghost btn-xs">${price}</button>
       </td>
     </tr>
   );
