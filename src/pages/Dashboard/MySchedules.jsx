@@ -62,7 +62,7 @@ const MySchedules = () => {
       </Helmet>
       <div className="flex lg:flex-row flex-col rounded-lg gap-6">
         {/* My bookings */}
-        <div className="flex-1 bg-sky-100 shadow-xl rounded-xl py-6">
+        <div className="flex-1 bg-sky-100 dark:bg-slate-700 shadow-xl rounded-xl py-6">
           {/* title */}
           <div className="flex flex-wrap">
             <div className="w-full px-4">
@@ -95,7 +95,7 @@ const MySchedules = () => {
                 <table className="table">
                   {/* head */}
                   <thead>
-                    <tr className="text-center">
+                    <tr className="text-center dark:text-white">
                       <th>Service</th>
                       <th>Provider Email</th>
                       <th>Date</th>
@@ -128,7 +128,7 @@ const MySchedules = () => {
           </div>
         </div>
         {/* my pending work */}
-        <div className="flex-1 bg-blue-100 shadow-xl rounded-xl py-6">
+        <div className="flex-1 bg-blue-100 dark:bg-slate-700 shadow-xl rounded-xl py-6">
           {/* title */}
           <div className="flex flex-wrap">
             <div className="w-full px-4">
@@ -161,7 +161,7 @@ const MySchedules = () => {
                 <table className="table">
                   {/* head */}
                   <thead>
-                    <tr className="text-center">
+                    <tr className="text-center dark:text-white">
                       <th>Service</th>
                       <th>Booked By</th>
                       <th>Date</th>

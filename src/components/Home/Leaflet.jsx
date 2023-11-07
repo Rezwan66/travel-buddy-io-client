@@ -21,7 +21,7 @@ const Leaflet = () => {
               </Marker>
             </MapContainer>
           </div>
-          <div>
+          <div className="lg:text-left text-center">
             <h1 className="text-2xl font-bold text-center lg:text-left mt-4">
               Meet us in Our Office!
             </h1>

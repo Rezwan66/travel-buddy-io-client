@@ -28,7 +28,7 @@ const ServiceCard = ({ service, handleEdit, handleDelete }) => {
 
   return (
     <div>
-      <div className="card lg:card-side bg-base-100 shadow-xl">
+      <div className="card lg:card-side bg-base-100 dark:bg-slate-700 shadow-xl">
         <figure>
           <img
             className="lg:h-full h-44 lg:w-48 w-full object-cover lg:rounded-l-lg"

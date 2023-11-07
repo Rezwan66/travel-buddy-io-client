@@ -141,7 +141,7 @@ const ServiceDetails = () => {
         </div>
       </div>
       {/* card + form */}
-      <div className="card lg:card-side bg-base-100 shadow-xl">
+      <div className="card lg:card-side bg-base-100 dark:bg-slate-700 shadow-xl">
         <figure>
           <img
             className="lg:h-80 h-60 lg:w-80 w-full object-cover"
@@ -303,7 +303,7 @@ const ServiceDetails = () => {
       {/* other products from this provider */}
       <div>
         <div className="mt-20">
-          <h3 className="text-gray-600 text-2xl font-semibold">
+          <h3 className="text-gray-600 dark:text-gray-400 text-2xl font-semibold">
             Other Services from this Provider
           </h3>
           <div>

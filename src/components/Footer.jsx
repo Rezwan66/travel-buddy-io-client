@@ -3,7 +3,7 @@ import logo from '../assets/logo/TravelBuddy.io.png';
 
 const Footer = () => {
   return (
-    <footer className="bg-blue-950 text-neutral-content">
+    <footer className="bg-blue-950 dark:bg-slate-900 text-neutral-content">
       <div className="container flex flex-col justify-between py-10 mx-auto space-y-8 lg:flex-row lg:space-y-0 max-w-7xl px-6 lg:px-0 border-b border-gray-500">
         <div className="lg:w-1/3">
           <Link to="/">

@@ -67,17 +67,17 @@ const AddServices = () => {
       <Helmet>
         <title>TravelBuddy | Add Service</title>
       </Helmet>
-      <div className="card w-full p-8 shadow-2xl bg-blue-100">
+      <div className="card w-full p-8 shadow-2xl bg-blue-100 dark:bg-slate-400">
         <div className="text-center">
-          <h1 className="text-4xl font-bold text-secondary">
+          <h1 className="text-4xl font-bold text-secondary dark:text-blue-700">
             Add Your Service
           </h1>
-          <p className="pt-2 pb-6 italic text-sm">
+          <p className="pt-2 pb-6 italic text-sm dark:text-black">
             Share Your Expertise, Offer Your Services
           </p>
         </div>
         <form onSubmit={handleSubmit}>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 dark:text-black">
             <div className="form-control">
               <label className="label">
                 <span className="label-text">Service Photo URL</span>

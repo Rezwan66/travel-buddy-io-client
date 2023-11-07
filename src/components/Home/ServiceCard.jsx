@@ -22,7 +22,7 @@ const ServiceCard = ({ service }) => {
         damping: 25,
       }}
     >
-      <div className="max-h-[600px] relative flex flex-col rounded-xl bg-white bg-clip-border shadow-md">
+      <div className="dark:bg-slate-700 max-h-[600px] relative flex flex-col rounded-xl bg-white bg-clip-border shadow-md">
         <div className="relative m-0 overflow-hidden text-gray-700 bg-transparent rounded-t-xl shadow-none bg-clip-border">
           <img
             className="w-full h-60 object-cover"
@@ -32,17 +32,17 @@ const ServiceCard = ({ service }) => {
         </div>
         <div className="p-6">
           <div className="lg:flex lg:items-center lg:justify-between">
-            <h4 className="block font-sans text-xl antialiased font-bold text-blue-gray-900">
+            <h4 className="block dark:text-white font-sans text-xl antialiased font-bold text-blue-gray-900">
               {service_name}
             </h4>
-            <p className="block font-sans mt-3 lg:mt-0 text-lg italic font-bold text-secondary">
+            <p className="block dark:text-white font-sans mt-3 lg:mt-0 text-lg italic font-bold text-secondary">
               Price: $ {price}
             </p>
           </div>
-          <p className="block italic mt-1 text-sm font-sans antialiased font-normal leading-relaxed text-gray-700">
+          <p className="block dark:text-white italic mt-1 text-sm font-sans antialiased font-normal leading-relaxed text-gray-700">
             <strong>Location:</strong> {provider_location}
           </p>
-          <p className="block font-sans mt-3 antialiased font-normal leading-relaxed text-gray-700">
+          <p className="block dark:text-white font-sans mt-3 antialiased font-normal leading-relaxed text-gray-700">
             {description}
           </p>
         </div>
@@ -53,7 +53,9 @@ const ServiceCard = ({ service }) => {
                 <img src={provider_img} />
               </div>
             </div>
-            <h2 className="italic text-secondary text-xs">{provider_name}</h2>
+            <h2 className="italic text-secondary text-xs dark:text-white">
+              {provider_name}
+            </h2>
           </div>
           <motion.div
             animate={{ scale: 1 }}

@@ -1,15 +1,15 @@
 const Newsletter = () => {
   return (
     <div className=" mt-20">
-      <div className="py-14 bg-white">
+      <div className="py-14 bg-blue-50 dark:bg-slate-800">
         <div className="container mx-auto max-w-7xl px-6 lg:px-0 space-y-8 text-gray-500 md:px-12">
           <div className="justify-center text-center gap-6 md:text-left md:flex lg:items-center lg:gap-16">
             <div className="order-last mb-6 space-y-6 md:mb-0 md:w-6/12 lg:w-6/12">
-              <h1 className="text-4xl text-gray-700 font-bold md:text-5xl">
+              <h1 className="text-4xl text-gray-400 font-bold md:text-5xl">
                 Subscribe to our{' '}
                 <span className="text-blue-500">Newsletter</span> today
               </h1>
-              <p className="text-lg">
+              <p className="text-lg dark:text-gray-400">
                 Get news about our awesome services and industry specialists
                 right in your inbox.
               </p>

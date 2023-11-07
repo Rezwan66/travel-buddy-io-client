@@ -5,10 +5,13 @@ import { AuthContext } from '../providers/AuthProvider';
 import toast from 'react-hot-toast';
 import Lottie from 'lottie-react';
 import noUserAnimation from '../assets/lottie/animation_avatar.json';
+import { useDarkMode } from '../hooks/useDarkMode';
+import { MdSunny, MdOutlineDarkMode } from 'react-icons/md';
 
 const NavBar = () => {
   const { user, logoutUser } = useContext(AuthContext);
   // console.log(user);
+  const { handleChangeTheme, mode } = useDarkMode();
 
   const handleLogout = () => {
     logoutUser()
@@ -148,7 +151,17 @@ const NavBar = () => {
             {navLinks}
           </ul>
         </div>
-        <div className="navbar-end">
+        <div className="navbar-end items-center">
+          <button
+            onClick={handleChangeTheme}
+            className="px-3 py-3 rounded-full mr-2 text-3xl"
+          >
+            {mode === 'dark' ? (
+              <MdSunny></MdSunny>
+            ) : (
+              <MdOutlineDarkMode></MdOutlineDarkMode>
+            )}
+          </button>
           <div>
             {user?.email ? (
               <div className="flex flex-col md:flex-row items-center gap-2 mr-4 lg:mr-0">
@@ -157,7 +170,7 @@ const NavBar = () => {
                     <img src={user?.photoURL} />
                   </div>
                 </div>
-                <p>{user?.displayName}</p>
+                <p className="dark:text-white">{user?.displayName}</p>
               </div>
             ) : (
               <div className="flex items-center">

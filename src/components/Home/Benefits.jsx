@@ -45,7 +45,7 @@ const Benefits = () => {
                p-10
                xl:px-10
                rounded-[20px]
-               bg-white
+               bg-white dark:bg-slate-200
                shadow-md
                hover:shadow-lg
                mb-8
@@ -85,10 +85,10 @@ const Benefits = () => {
                     </svg>
                   </div>
                 </motion.div>
-                <h4 className="font-semibold text-xl text-dark mb-3">
+                <h4 className="dark:text-black font-semibold text-xl text-dark mb-3">
                   Booking and Scheduling
                 </h4>
-                <p className="text-body-color">
+                <p className="dark:text-black text-body-color">
                   Book and manage your services, view schedules, and set
                   preferences.
                 </p>
@@ -109,7 +109,7 @@ const Benefits = () => {
                p-10
                xl:px-10
                rounded-[20px]
-               bg-white
+               bg-white dark:bg-slate-200
                shadow-md
                hover:shadow-lg
                mb-8
@@ -150,10 +150,10 @@ const Benefits = () => {
                   </div>
                 </motion.div>
 
-                <h4 className="font-semibold text-xl text-dark mb-3">
+                <h4 className="dark:text-black font-semibold text-xl text-dark mb-3">
                   Service Listing
                 </h4>
-                <p className="text-body-color">
+                <p className="dark:text-black text-body-color">
                   List your services, set prices, and provide all necessary
                   details.
                 </p>
@@ -175,7 +175,7 @@ const Benefits = () => {
                
                xl:px-10
                rounded-[20px]
-               bg-white
+               bg-white dark:bg-slate-200
                shadow-md
                hover:shadow-lg
                mb-8
@@ -220,10 +220,10 @@ const Benefits = () => {
                   </div>
                 </motion.div>
 
-                <h4 className="font-semibold text-xl text-dark mb-3">
+                <h4 className="dark:text-black font-semibold text-xl text-dark mb-3">
                   Service Discovery
                 </h4>
-                <p className="text-body-color">
+                <p className="dark:text-black text-body-color">
                   Easily find and explore a variety of services in your area.
                 </p>
               </div>

@@ -53,7 +53,7 @@ const TableRowPending = ({ booking, refetch }) => {
           <select
             defaultValue={status || 'Pending'}
             onChange={handleStateChange}
-            className="input text-xs font-medium h-8 w-32 input-bordered"
+            className="input text-xs font-medium h-8 w-32 input-bordered dark:text-black"
             name="status"
           >
             <option>Pending</option>
