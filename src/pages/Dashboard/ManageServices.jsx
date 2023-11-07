@@ -91,7 +91,7 @@ const ManageServices = () => {
 
   // handle delete
   const handleDelete = _id => {
-    console.log(_id);
+    // console.log(_id);
     Swal.fire({
       title: 'Are you sure?',
       text: "You won't be able to revert this!",
@@ -105,7 +105,7 @@ const ManageServices = () => {
         axios
           .delete(`/services/${_id}`)
           .then(res => {
-            console.log(res.data);
+            // console.log(res.data);
             if (res.data.deletedCount > 0) {
               Swal.fire({
                 title: 'Deleted!',

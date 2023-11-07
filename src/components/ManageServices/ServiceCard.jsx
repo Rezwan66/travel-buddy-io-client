@@ -63,12 +63,12 @@ const ServiceCard = ({ service, handleEdit, handleDelete }) => {
               <button
                 className="btn btn-secondary btn-outline btn-circle btn-sm"
                 onClick={() =>
-                  document.getElementById('my_modal_4').showModal()
+                  document.getElementById(`my_modal_${_id}`).showModal()
                 }
               >
                 <FaEdit></FaEdit>
               </button>
-              <dialog id="my_modal_4" className="modal">
+              <dialog id={`my_modal_${_id}`} className="modal">
                 <div className="modal-box w-11/12 max-w-4xl bg-blue-50">
                   <h3 className="font-bold text-lg text-center text-secondary">
                     Edit Service!
