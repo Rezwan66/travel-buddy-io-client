@@ -31,7 +31,7 @@ const useAxios = () => {
         }
       }
     );
-  }, []);
+  }, [logoutUser, navigate]);
 
   return instance;
 };

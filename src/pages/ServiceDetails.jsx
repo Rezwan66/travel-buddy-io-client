@@ -115,7 +115,7 @@ const ServiceDetails = () => {
   return (
     <div className="mt-6 mb-14 max-w-4xl mx-auto px-6 lg:px-0">
       <Helmet>
-        <title>Service | {service_name}</title>
+        <title>Service | {`${service_name}`}</title>
       </Helmet>
       {/* title */}
       <div className="flex flex-wrap mb-4">
