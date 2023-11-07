@@ -56,7 +56,7 @@ const AddServices = () => {
         if (res?.data?.insertedId) {
           swalSuccess();
           form.reset();
-          navigate('/all-services');
+          navigate('/manage-services');
         }
       })
       .catch(error => toast.error(error.message));

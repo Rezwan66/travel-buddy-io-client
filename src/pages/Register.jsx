@@ -38,10 +38,6 @@ const Register = () => {
         // toast.success('Created user successfully!');
         updateUser(name, photo)
           .then(() => {
-            // toast.success('Updated profile successfully!');
-            // toast('Redirecting to Home!', {
-            //   icon: '➡',
-            // });
             swalSuccess();
             navigate('/');
           })

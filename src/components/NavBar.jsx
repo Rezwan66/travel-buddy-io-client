@@ -8,7 +8,7 @@ import noUserAnimation from '../assets/lottie/animation_avatar.json';
 
 const NavBar = () => {
   const { user, logoutUser } = useContext(AuthContext);
-  console.log(user);
+  // console.log(user);
 
   const handleLogout = () => {
     logoutUser()

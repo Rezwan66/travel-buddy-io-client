@@ -23,7 +23,7 @@ const Services = () => {
     setSearchTerm(searchTerm);
   };
 
-  console.log(searchTerm);
+  // console.log(searchTerm);
 
   const {
     data: services,
@@ -35,7 +35,7 @@ const Services = () => {
     queryFn: getServices,
   });
 
-  console.log(services?.data);
+  // console.log(services?.data);
 
   if (isLoading) {
     return <Spinner></Spinner>;
@@ -122,12 +122,17 @@ const Services = () => {
             )}
           </div>
         </div>
+        <p className="text-xs text-right my-4 italic">
+          Showing{' '}
+          {services?.data?.length === 1 ? (
+            <span>{services?.data?.length} service</span>
+          ) : (
+            <span>{services?.data?.length} services</span>
+          )}
+        </p>
         <div className="grid grid-cols-1 gap-6">
           {services?.data?.map(service => (
-            <ServiceCard
-              key={service.service_id}
-              service={service}
-            ></ServiceCard>
+            <ServiceCard key={service._id} service={service}></ServiceCard>
           ))}
         </div>
         <div className="flex justify-center mt-8">

@@ -30,7 +30,7 @@ const ManageServices = () => {
     queryFn: getMyServices,
   });
 
-  console.log(services?.data);
+  // console.log(services?.data);
 
   if (isLoading) {
     return <Spinner></Spinner>;
@@ -124,7 +124,7 @@ const ManageServices = () => {
   };
 
   return (
-    <div className="max-w-2xl mx-auto mt-8 mb-20 px-6 lg:px-0">
+    <div className="max-w-2xl mx-auto mt-8 mb-40 px-6 lg:px-0">
       <Helmet>
         <title>TravelBuddy | Manage Services</title>
       </Helmet>

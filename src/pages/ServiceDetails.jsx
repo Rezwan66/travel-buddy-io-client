@@ -61,6 +61,7 @@ const ServiceDetails = () => {
       date,
       price,
       instructions,
+      status: 'Pending',
     };
     console.log(booking);
 
@@ -149,8 +150,8 @@ const ServiceDetails = () => {
           />
         </figure>
         <div className="card-body">
-          <div className="flex gap-6">
-            <div className="flex-1 space-y-2 border-r pr-2">
+          <div className="flex gap-6 md:flex-row flex-col">
+            <div className="flex-1 space-y-2 md:border-r pr-2">
               <h2 className="card-title font-bold ">Service:</h2>
               <div>
                 <h2 className="font-medium">{service_name}</h2>
@@ -162,15 +163,15 @@ const ServiceDetails = () => {
             </div>
             <div className="flex-1 space-y-2">
               <h2 className="card-title font-bold">Provider:</h2>
-              <div className="flex md:flex-row flex-col-reverse justify-between gap-4">
+              <div className="flex items-center justify-between gap-4">
                 <div>
                   <h2 className="font-medium">{provider_name}</h2>
                   <p className="text-sm mt-2">
                     <strong>Area:</strong> {provider_location}
                   </p>
                 </div>
-                <div className="avatar mr-16">
-                  <div className="w-8 h-8 rounded-full ring ring-secondary ring-offset-base-100 ring-offset-2">
+                <div className="avatar mr-8">
+                  <div className="w-12 h-12  rounded-full ring ring-secondary ring-offset-base-100 ring-offset-2">
                     <img src={provider_img} />
                   </div>
                 </div>
@@ -191,9 +192,12 @@ const ServiceDetails = () => {
             </button>
             <dialog id="my_modal_4" className="modal">
               <div className="modal-box w-11/12 max-w-4xl bg-blue-50">
-                <h3 className="font-bold text-lg text-center text-secondary mb-2">
+                <h3 className="font-bold text-lg text-center text-secondary">
                   Book A Service!
                 </h3>
+                <p className="text-xs text-right my-4 italic">
+                  Press ESC to cancel!
+                </p>
                 <div className="">
                   <form onSubmit={handleSubmit} method="dialog">
                     {/* if there is a button, it will close the modal */}
@@ -269,7 +273,7 @@ const ServiceDetails = () => {
                           readOnly
                         />
                       </div>
-                      <div className="form-control col-span-2">
+                      <div className="form-control md:col-span-2">
                         <label className="label">
                           <span className="label-text">
                             Special instructions

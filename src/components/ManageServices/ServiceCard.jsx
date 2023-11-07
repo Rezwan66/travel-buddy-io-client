@@ -70,9 +70,12 @@ const ServiceCard = ({ service, handleEdit, handleDelete }) => {
               </button>
               <dialog id="my_modal_4" className="modal">
                 <div className="modal-box w-11/12 max-w-4xl bg-blue-50">
-                  <h3 className="font-bold text-lg text-center text-secondary mb-2">
+                  <h3 className="font-bold text-lg text-center text-secondary">
                     Edit Service!
                   </h3>
+                  <p className="text-xs text-right my-2 italic">
+                    Press ESC to cancel!
+                  </p>
                   <div className="">
                     <form onSubmit={handleEdit} method="dialog">
                       {/* if there is a button, it will close the modal */}

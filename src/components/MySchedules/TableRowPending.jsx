@@ -46,7 +46,7 @@ const TableRowPending = ({ booking, refetch }) => {
         </div>
       </td>
       <td>{user_email}</td>
-      <td>{date}</td>
+      <td>{date ? date : <span className="italic text-xs">not-given</span>}</td>
       <td>
         {/* <button className="btn btn-ghost btn-xs">details</button> */}
         <form>
