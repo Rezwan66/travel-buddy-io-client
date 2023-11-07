@@ -73,7 +73,7 @@ const AddServices = () => {
           </p>
         </div>
         <form onSubmit={handleSubmit}>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div className="form-control">
               <label className="label">
                 <span className="label-text">Service Photo URL</span>
