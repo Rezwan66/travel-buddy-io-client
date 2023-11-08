@@ -27,7 +27,9 @@ const NavBar = () => {
         <NavLink
           to="/"
           className={({ isActive }) =>
-            isActive ? 'bg-secondary text-white px-3 py-1 rounded-lg' : ''
+            isActive
+              ? 'bg-secondary text-white dark:text-slate-200 px-3 py-1 rounded-lg'
+              : ''
           }
         >
           HOME
@@ -37,7 +39,9 @@ const NavBar = () => {
         <NavLink
           to="/all-services"
           className={({ isActive }) =>
-            isActive ? 'bg-secondary text-white px-3 py-1 rounded-lg' : ''
+            isActive
+              ? 'bg-secondary text-white dark:text-slate-200 px-3 py-1 rounded-lg'
+              : ''
           }
         >
           ALL SERVICES
@@ -50,7 +54,7 @@ const NavBar = () => {
               <summary className="lg:btn lg:btn-outline lg:btn-sm btn-secondary bg-inherit text-inherit">
                 Dashboard
               </summary>
-              <ul className="p-2 shadow menu menu-sm dropdown-content z-[1] bg-base-100 rounded-box w-52">
+              <ul className="p-2 shadow menu menu-sm dropdown-content z-[1] bg-base-100 dark:bg-slate-700 rounded-box w-52">
                 <li>
                   <NavLink to="/add-services" className="bg-transparent">
                     Add Services
@@ -105,7 +109,9 @@ const NavBar = () => {
           <NavLink
             to="/login"
             className={({ isActive }) =>
-              isActive ? 'bg-secondary text-white px-3 py-1 rounded-lg' : ''
+              isActive
+                ? 'bg-secondary text-white dark:text-slate-200 px-3 py-1 rounded-lg'
+                : ''
             }
           >
             SIGN IN
@@ -137,7 +143,7 @@ const NavBar = () => {
             </label>
             <ul
               tabIndex={0}
-              className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
+              className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52 dark:bg-slate-700"
             >
               {navLinks}
             </ul>
