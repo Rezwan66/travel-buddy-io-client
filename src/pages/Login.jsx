@@ -34,7 +34,10 @@ const Login = () => {
         console.log(res.user);
         // toast.success('Signed in successfully!');
         swalSuccess();
-        navigate(location?.state ? location.state : '/');
+        setTimeout(() => {
+          navigate(location?.state ? location.state : '/');
+        }, 2000);
+        // navigate(location?.state ? location.state : '/');
       })
       .catch(error => toast.error(error.message));
   };
@@ -44,7 +47,10 @@ const Login = () => {
       .then(() => {
         // toast.success('Successfully signed in using Google');
         swalSuccess();
-        navigate(location?.state ? location.state : '/');
+        setTimeout(() => {
+          navigate(location?.state ? location.state : '/');
+        }, 2000);
+        // navigate(location?.state ? location.state : '/');
       })
       .catch(error => toast.error(error.message));
   };

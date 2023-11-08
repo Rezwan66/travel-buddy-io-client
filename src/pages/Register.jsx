@@ -39,7 +39,10 @@ const Register = () => {
         updateUser(name, photo)
           .then(() => {
             swalSuccess();
-            navigate('/');
+            setTimeout(() => {
+              navigate('/');
+            }, 2000);
+            // navigate('/');
           })
           .catch(error => toast.error(error.message));
       })
@@ -50,8 +53,10 @@ const Register = () => {
     googleLogin()
       .then(() => {
         toast.success('Successfully signed in using Google');
-
-        navigate(location?.state ? location.state : '/');
+        setTimeout(() => {
+          navigate(location?.state ? location.state : '/');
+        }, 2000);
+        // navigate(location?.state ? location.state : '/');
       })
       .catch(error => toast.error(error.message));
   };
