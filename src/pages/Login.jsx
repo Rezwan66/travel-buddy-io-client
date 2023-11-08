@@ -63,9 +63,11 @@ const Login = () => {
             </div>
             <div className="card flex-shrink-0 w-full max-w-md shadow-2xl bg-base-100 py-2 px-5">
               <div className="card-body">
-                <h1 className="text-4xl text-center font-semibold">Login</h1>
+                <h1 className="text-4xl text-center font-semibold dark:text-black">
+                  Login
+                </h1>
                 <form onSubmit={handleLogin}>
-                  <div className="form-control">
+                  <div className="form-control dark:text-black">
                     <label className="label">
                       <span className="label-text font-semibold">Email</span>
                     </label>
@@ -77,7 +79,7 @@ const Login = () => {
                       required
                     />
                   </div>
-                  <div className="form-control">
+                  <div className="form-control dark:text-black">
                     <label className="label">
                       <span className="label-text font-semibold">Password</span>
                     </label>
@@ -106,7 +108,7 @@ const Login = () => {
                 <div className="my-4">
                   <div className="flex items-center mb-8">
                     <div className="border h-[1px] w-full"></div>
-                    <p className="mx-2"> OR </p>
+                    <p className="mx-2 dark:text-black"> OR </p>
                     <div className="border h-[1px] w-full"></div>
                   </div>
                   <div className="relative">
@@ -123,7 +125,7 @@ const Login = () => {
                     />
                   </div>
                 </div>
-                <p className="mt-4 text-center">
+                <p className="mt-4 text-center dark:text-black">
                   New to TravelBuddy.io?{' '}
                   <Link to="/register" className="text-primary font-bold">
                     Register

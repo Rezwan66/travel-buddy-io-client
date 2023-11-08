@@ -30,7 +30,7 @@ const AuthProvider = ({ children }) => {
       // if there is a user, then we will issue a token
       if (currentUser) {
         axios
-          .post('http://localhost:5000/jwt', loggedUser, {
+          .post('https://travel-buddy-io-server.vercel.app/jwt', loggedUser, {
             withCredentials: true,
           })
           .then(res => {
@@ -38,9 +38,13 @@ const AuthProvider = ({ children }) => {
           });
       } else {
         axios
-          .post('http://localhost:5000/logout', loggedUser, {
-            withCredentials: true,
-          })
+          .post(
+            'https://travel-buddy-io-server.vercel.app/logout',
+            loggedUser,
+            {
+              withCredentials: true,
+            }
+          )
           .then(res => {
             console.log(res.data);
           });

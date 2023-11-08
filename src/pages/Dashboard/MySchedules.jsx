@@ -37,6 +37,7 @@ const MySchedules = () => {
   const {
     data: myPendingWork,
     isLoading,
+    isFetching,
     isError,
     error,
     refetch,
@@ -47,7 +48,7 @@ const MySchedules = () => {
 
   // console.log('my pending work', myPendingWork?.data);
   // console.log('my bookings', myBookings);
-  if (isLoading) {
+  if (isLoading || isFetching) {
     return <Spinner></Spinner>;
   }
 
