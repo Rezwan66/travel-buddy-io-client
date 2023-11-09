@@ -1,9 +1,15 @@
 import { MapContainer, Marker, Popup, TileLayer } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
 import '../../../src/index.css';
+import marker from '../../assets/logo/location.png';
+import { Icon } from 'leaflet';
 
 const Leaflet = () => {
   const position = [23.8103, 90.4125];
+  const custIcon = new Icon({
+    iconUrl: marker,
+    iconSize: [38, 38],
+  });
   return (
     <div className="mb-10">
       <div className="hero max-w-7xl mx-auto py-14 px-6 lg:px-0">
@@ -14,7 +20,7 @@ const Leaflet = () => {
                 attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
                 url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
               />
-              <Marker position={position}>
+              <Marker position={position} icon={custIcon}>
                 <Popup>
                   Find us Here. <br /> Visit Our Office.
                 </Popup>
