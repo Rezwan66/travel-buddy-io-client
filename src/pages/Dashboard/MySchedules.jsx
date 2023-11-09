@@ -11,9 +11,9 @@ import TableRowPending from '../../components/MySchedules/TableRowPending';
 import { Helmet } from 'react-helmet-async';
 
 const MySchedules = () => {
+  const { user } = useContext(AuthContext);
   const [myBookings, setMyBookings] = useState([]);
   // const [bookingStatus, setBookingStatus] = useState('');
-  const { user } = useContext(AuthContext);
   const axios = useAxios();
 
   // GET My-Bookings
