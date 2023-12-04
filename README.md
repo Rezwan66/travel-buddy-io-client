@@ -1,6 +1,6 @@
 # TravelBuddy.io 🚗
 
-A simple responsive React SPA for booking, providing, and exploring carpool and ride-sharing services!
+A simple responsive React SPA for booking, providing, and exploring carpool and ride-sharing services! Users can also login to add, manage, and edit their own services and schedules in their personal dashboard.
 
 ### Technologies Used
 
