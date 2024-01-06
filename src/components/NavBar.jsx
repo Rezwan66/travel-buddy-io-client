@@ -122,7 +122,7 @@ const NavBar = () => {
   );
   return (
     <div className="bg-transparent">
-      <div className="navbar max-w-7xl mx-auto py-4">
+      <div className="navbar mx-auto py-4 md:px-6">
         <div className="navbar-start">
           <div className="dropdown">
             <label tabIndex={0} className="btn btn-ghost lg:hidden">

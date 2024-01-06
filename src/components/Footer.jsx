@@ -4,8 +4,8 @@ import logo from '../assets/logo/TravelBuddy.io.png';
 const Footer = () => {
   return (
     <footer className="bg-blue-950 dark:bg-slate-900 text-neutral-content">
-      <div className="container flex flex-col justify-between py-10 mx-auto space-y-8 lg:flex-row lg:space-y-0 max-w-7xl px-6 lg:px-0 border-b border-gray-500">
-        <div className="lg:w-1/3">
+      <div className="flex flex-col justify-between py-10 mx-auto space-y-8 lg:flex-row lg:space-y-0 px-6 border-b border-gray-500">
+        <div className="lg:w-3/12">
           <Link to="/">
             <img
               className="md:w-36 rounded-xl lg:ml-4 w-32"
@@ -14,7 +14,7 @@ const Footer = () => {
             />
           </Link>
         </div>
-        <div className="grid grid-cols-2 text-sm gap-x-3 gap-y-8 lg:w-2/3 sm:grid-cols-4">
+        <div className="grid grid-cols-2 text-sm gap-x-3 gap-y-8 lg:w-9/12 sm:grid-cols-4">
           <div className="space-y-3">
             <h3 className="uppercase">Product</h3>
             <ul className="space-y-1">
