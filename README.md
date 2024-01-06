@@ -30,6 +30,11 @@ After configuring the environment variables, run this command to start the proje
 npm run dev
 ```
 
+### Updated Features
+
+- Added group hover animation for all service cards.
+- Changed grid layout to show more cards on large devices for the all services page.
+
 ### Features & Functionalities
 
 - Discover all our services in the `Homepage` and click on the _view details_ button to view a specific service, or click the _show all_ button to browse all our services.

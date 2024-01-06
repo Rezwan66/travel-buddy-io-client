@@ -50,7 +50,7 @@ const Services = () => {
       <Helmet>
         <title>TravelBuddy | All Services</title>
       </Helmet>
-      <div className="max-w-2xl mx-auto my-14 px-6 lg:px-0">
+      <div className="max-w-7xl mx-auto my-14 md:px-16 px-6 lg:px-0">
         {/* <h2 className="text-center text-xl font-semibold text-primary underline mb-8">
         {' '}
         Our Popular Services{' '}
@@ -80,14 +80,14 @@ const Services = () => {
             </div>
           </div>
         </div>
-        <div className="flex items-center gap-6 justify-center mb-8">
+        <div className="flex items-center justify-center mb-8">
           <form onSubmit={handleSearch}>
             <div className="form-control">
               <div className="input-group">
                 <input
                   type="text"
                   name="search"
-                  placeholder="Search…"
+                  placeholder="Service Name..."
                   className="input input-bordered"
                 />
                 <button type="submit" className="btn btn-square">
@@ -112,7 +112,7 @@ const Services = () => {
           <div>
             {searchTerm ? (
               <button
-                className="text-secondary underline"
+                className="text-secondary underline text-sm ml-4"
                 onClick={() => setSearchTerm('')}
               >
                 Show All
@@ -130,7 +130,7 @@ const Services = () => {
             <span>{services?.data?.length} services</span>
           )}
         </p>
-        <div className="grid grid-cols-1 gap-6">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
           {services?.data?.map(service => (
             <ServiceCard key={service._id} service={service}></ServiceCard>
           ))}

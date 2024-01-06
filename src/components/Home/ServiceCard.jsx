@@ -22,10 +22,10 @@ const ServiceCard = ({ service }) => {
         damping: 25,
       }}
     >
-      <div className="dark:bg-slate-700 max-h-[600px] relative flex flex-col rounded-xl bg-white bg-clip-border shadow-md">
+      <div className="dark:bg-slate-700 max-h-[600px] relative flex flex-col rounded-xl bg-white bg-clip-border shadow-md group">
         <div className="relative m-0 overflow-hidden text-gray-700 bg-transparent rounded-t-xl shadow-none bg-clip-border">
           <img
-            className="w-full h-60 object-cover"
+            className="w-full h-60 object-cover group-hover:scale-110 transition"
             src={service_img}
             alt="ui/ux review check"
           />
