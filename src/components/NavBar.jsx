@@ -110,7 +110,7 @@ const NavBar = () => {
                 </li>
               </ul>
             </div> */}
-            <button onClick={handleLogout} className="capitalize">
+            <button onClick={handleLogout} className="capitalize mt-2 lg:mt-0">
               LOGOUT
             </button>
           </div>
@@ -152,7 +152,7 @@ const NavBar = () => {
             </label>
             <ul
               tabIndex={0}
-              className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52 dark:bg-slate-700"
+              className="flex flex-col flex-wrap text-sm space-y-2 menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-40 dark:bg-slate-700"
             >
               {navLinks}
             </ul>
