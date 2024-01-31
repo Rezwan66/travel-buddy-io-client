@@ -54,19 +54,28 @@ const NavBar = () => {
               <summary className="lg:btn lg:btn-outline lg:btn-sm btn-secondary bg-inherit text-inherit">
                 Dashboard
               </summary>
-              <ul className="p-2 shadow menu menu-sm dropdown-content z-[1] bg-base-100 dark:bg-slate-700 rounded-box w-52">
+              <ul className="p-2 shadow menu menu-sm dropdown-content z-[1] bg-base-100 dark:bg-slate-700 text-secondary rounded-box w-52">
                 <li>
-                  <NavLink to="/add-services" className="bg-transparent">
+                  <NavLink
+                    to="/add-services"
+                    className="bg-transparent dark:hover:text-white"
+                  >
                     Add Services
                   </NavLink>
                 </li>
                 <li>
-                  <NavLink to="/manage-services" className="bg-transparent">
+                  <NavLink
+                    to="/manage-services"
+                    className="bg-transparent dark:hover:text-white"
+                  >
                     Manage Services
                   </NavLink>
                 </li>
                 <li>
-                  <NavLink to="/my-schedules" className="bg-transparent">
+                  <NavLink
+                    to="/my-schedules"
+                    className="bg-transparent dark:hover:text-white"
+                  >
                     My Schedules
                   </NavLink>
                 </li>
@@ -153,7 +162,7 @@ const NavBar = () => {
           </Link>
         </div>
         <div className="navbar-center hidden lg:flex">
-          <ul className="flex flex-wrap items-center gap-7 text-sm font-semibold text-secondary menu-horizontal px-1">
+          <ul className="flex flex-wrap items-center gap-7 text-sm font-semibold text-secondary menu-horizontal px-1 dark:text-white">
             {navLinks}
           </ul>
         </div>
