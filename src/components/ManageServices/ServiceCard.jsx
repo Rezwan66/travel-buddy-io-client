@@ -68,7 +68,7 @@ const ServiceCard = ({ service, handleEdit, handleDelete }) => {
               >
                 <FaEdit></FaEdit>
               </button>
-              <dialog id={`my_modal_${_id}`} className="modal">
+              <dialog id={`my_modal_${_id}`} className="modal dark:text-black">
                 <div className="modal-box w-11/12 max-w-4xl bg-blue-50">
                   <h3 className="font-bold text-lg text-center text-secondary">
                     Edit Service!
