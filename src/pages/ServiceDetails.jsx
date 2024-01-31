@@ -190,7 +190,7 @@ const ServiceDetails = () => {
             >
               Book Now
             </button>
-            <dialog id="my_modal_4" className="modal">
+            <dialog id="my_modal_4" className="modal dark:text-black">
               <div className="modal-box w-11/12 max-w-4xl bg-blue-50">
                 <h3 className="font-bold text-lg text-center text-secondary">
                   Book A Service!
