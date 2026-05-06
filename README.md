@@ -1,52 +1,119 @@
-# TravelBuddy.io 🚗
+# 🚗 TravelBuddy.io
 
-A simple responsive React SPA for booking, providing, and exploring carpool and ride-sharing services! Users can also login to add, manage, and edit their own services and schedules in their personal dashboard.
+> A responsive single-page React application for booking, providing, and exploring carpool and ride-sharing services. Includes a personalized dashboard for users to manage their own services and booking schedules securely.
 
-### Technologies Used
+<p align="center">
+  <a href="https://travel-buddy-io.web.app/" target="_blank">
+    <img src="https://img.shields.io/badge/Live%20Demo-travel--buddy--io.web.app-E63946?style=for-the-badge&logo=firebase&logoColor=white" alt="Live Demo" />
+  </a>&nbsp;
+  <a href="https://github.com/Rezwan66/travel-buddy-io-server" target="_blank">
+    <img src="https://img.shields.io/badge/Server%20Repo-travel--buddy--io--server-181717?style=for-the-badge&logo=github&logoColor=white" alt="Server Repo" />
+  </a>
+</p>
 
-[![Tech](https://skillicons.dev/icons?i=js,react,tailwind,firebase,nodejs,express,mongodb&theme=dark)](https://skillicons.dev)
+---
 
-## Getting Started
+## 📸 Preview
 
-Follow these steps to clone and run the project on your local machine.
+<p align="center">
+  <img src="./assets/travel-buddy-preview.png" alt="TravelBuddy.io Homepage" width="100%" />
+</p>
 
-Clone the repository and navigate to the cloned repo.
+---
 
-#### Install Dependencies
+## ✨ Key Features
+
+- 🗺️ **Discover Services** — Browse a wide range of popular and available ride-sharing and shuttle services directly from the homepage.
+- 🔍 **Search & Explore** — Access the "All Services" page to view everything, search for specific services by name, or view detailed information.
+- 🔒 **Protected Booking System** — Secure service booking available exclusively to authenticated users.
+- 👨‍💻 **Personalized Dashboard** — A dedicated space for logged-in users to manage their activities:
+  - **Add Services:** Post your own ride-sharing services for others to book.
+  - **Manage Services:** Edit details of your posted services or remove them from the platform.
+  - **My Schedules:** Track both your bookings of other people's services, and other people's bookings of your services. Easily update booking statuses (Pending, In Progress, Completed).
+- 🔐 **Secure Authentication** — User login and registration powered by Firebase SDK.
+- 🌗 **Dark Mode** — Built-in theme toggle for comfortable viewing in any lighting condition.
+- ✨ **Interactive UI** — Smooth animations (Framer Motion) and group hover effects for an engaging user experience.
+
+---
+
+## 🛠️ Tech Stack
+
+[![Tech](https://skillicons.dev/icons?i=react,js,tailwind,firebase,nodejs,express,mongodb,vite&theme=dark)](https://skillicons.dev)
+
+| Layer | Technologies |
+|:------|:-------------|
+| **Frontend** | React 18, React Router, TanStack Query, Tailwind CSS, DaisyUI |
+| **Auth** | Firebase SDK |
+| **Backend** | Node.js, Express.js |
+| **Database** | MongoDB |
+| **UI/UX** | Framer Motion, Lottie React, SweetAlert2, React Icons |
+| **Maps** | Leaflet, React Leaflet |
+| **Build** | Vite |
+| **Hosting** | Firebase (Client) · Vercel (Server) |
+
+---
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+- Node.js (v16+)
+- npm or yarn
+- Firebase project with Authentication enabled
+
+### Installation
 
 ```bash
+# Clone the repository
+git clone https://github.com/Rezwan66/travel-buddy-io-client.git
+
+# Navigate to the project
+cd travel-buddy-io-client
+
+# Install dependencies
 npm install
 ```
 
-#### Configure Environment Variables
+### Environment Variables
 
-You will be needing the environment variables for Firebase SDK before running the project. Please contact me if you need access to the .env.local file.
+Create a `.env.local` file in the root directory with your Firebase configuration:
 
-#### Run the Project
+```env
+VITE_apiKey=your_firebase_api_key
+VITE_authDomain=your_project.firebaseapp.com
+VITE_projectId=your_project_id
+VITE_storageBucket=your_project.appspot.com
+VITE_messagingSenderId=your_sender_id
+VITE_appId=your_app_id
+```
 
-After configuring the environment variables, run this command to start the project.
+### Run Locally
 
 ```bash
 npm run dev
 ```
 
-### Updated Features
+The app will be available at `http://localhost:5173`
 
-- Added group hover animation for all service cards.
-- Changed grid layout to show more cards on large devices for the all services page.
+---
 
-### Features & Functionalities
+## 📁 Project Structure
 
-- Discover all our services in the `Homepage` and click on the _view details_ button to view a specific service, or click the _show all_ button to browse all our services.
-- The _show all_ button or the Navbar route link `All Services` takes you to the page where you can browse all services, search for specific services by name, or _view details_ for a certain service.
-- The `Service Details` page is a protected route which means what only logged in users can view the service details and book a specific service through a modal form, if they want to.
-- The manage bookings and services section of the website i.e. the dashboard is user protected, which means that it is only accessible in the navbar after a user logs in.
-- In the dashboard are three routes:
-  - `Add Services` where the user can add a service of their own, which is then posted to the All Services page, and can be booked by other users.
-  - `Manage Services`: In this page, the user can edit information about their posted services or delete them entirely from the database.
-  - The `My Schedules` page consists of two separate tables- one table shows all the services of other service providers which were booked by this user. And the other table shows all the services provided by the user, which have been booked by other people. Here, the user can also update the booking status from either of the three options: 'Pending', 'In Progress', and 'Completed'.
-- Additionally, you have the option to view the website in dark mode to give your eyes some rest!
+```
+src/
+├── assets/          # Static assets (images, animations)
+├── components/      # Reusable UI components
+├── firebase/        # Firebase configuration
+├── hooks/           # Custom React hooks
+├── pages/           # Route-level page components
+├── providers/       # Context providers (Auth, Theme)
+├── routes/          # Route definitions & protected routes
+└── utilities/       # Helper functions
+```
 
-### Client Side Live Link:
+---
 
-[Firebase](https://travel-buddy-io.web.app/) : https://travel-buddy-io.web.app/
+## 🔗 Related
+
+- **Server Repository:** [travel-buddy-io-server](https://github.com/Rezwan66/travel-buddy-io-server)
+- **Live Site:** [travel-buddy-io.web.app](https://travel-buddy-io.web.app/)
